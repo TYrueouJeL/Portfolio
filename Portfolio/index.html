@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Portfolio de Rémi Guerin</title>
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="js/script.js" defer></script>
+    </head>
+
+    <body>
+        <section class="header">
+            <header class="header-top menu">                
+                <nav class="main-nav" role="navigation">
+                    <div id="menuToggle">
+                        <input type="checkbox" />
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <ul id="menu">
+                            <li><a href="#">Accueil</a></li>
+                            <li><a href="#a-propos">A propos</a></li>
+                            <li><a href="#projets">Projets</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="back-to-top">
+                <a href="#">
+                    <i class="fa fa-chevron-up fa-2x" aria-hidden="true"></i>
+                </a>
+            </div>
+
+            <div class="header-content">
+                <h1>Rémi</h1>
+                <h2>Bonjour</h2>
+                <h2>Je suis <strong>étudiant</strong></h2>
+                <h2>Je suis Rémi Guerin</h2>
+            </div>
+    
+        </section>
+
+        <main>
+            <div id="a-propos" class="container main background-propos">
+                <section class="main-section-propos" data-aos="fade-up">
+                    <img src="./images/terra-chevalier.jpg" alt="terracid chevalier">
+                    <div>
+                        <h2>A propos de Rémi Guerin</h2>
+                        <p>Je suis <strong>Rémi Guerin</strong> et je ne suis <strong>personne</strong>.</p>
+                        <a href="./images/rick-roll.jpg" class="btn btn-primary" target="_blank">Télécharger mon cv</a>
+                        <a href="#contact" class="btn btn-primary-outline">Mes contacts</a>
+                    </div>
+                </section>
+            </div>
+    
+            <div id="projets" class=" main background-projets">
+                <section class="center container main-section-projets" data-aos="fade-up">
+                    <h2>Mes projets</h2>
+                    <ol>
+                        <li>Fer II sur lol</li>
+                        <img src="./images/iron-lol.webp" alt="iron lol">
+                        <li>Fer 3 sur valo</li>
+                        <img src="./images/iron-valo.webp" alt="iron valo">
+                    </ol>
+                </section>
+            </div>
+
+            <div id="contact" class="container main background-contact contact">
+                <section class="main-section-contact" data-aos="fade-up">
+                    <h2>Contactez moi</h2>
+    
+                    <address>
+                        <div>
+                            <i class="fa fa-map fa-2x" aria-hidden="true"></i>
+                            <div>Adresse</div>
+                            <div>Ici ou là bas, je ne sais pas</div>
+                        </div>
+                        <div>
+                            <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                            <div>Email</div>
+                            <div><a href="mailto:remiguerin503@gmail.com" target="_blank">remiguerin503@gmail.com</a></div>
+                        </div>
+                        <div>
+                            <i class="fa fa-mobile fa-3x" aria-hidden="true"></i>
+                            <div>Téléphone</div>
+                            <div>
+                                <a href="Tel:+33767603998">07 67 60 39 87</a>
+                            </div>
+                        </div>
+                    </address>
+
+                    <form action="" method="get">
+                        <div class="contact-width">
+                            <input class="value-entry" type="text" name="prenom" id="firstname" placeholder="Prénom" required>
+                            
+                            <input class="value-entry" type="text" name="nom" id="lastname" placeholder="Nom" required>
+                        </div>
+                        <div>
+                            <textarea class="value-entry" name="message" id="message" rows="4" placeholder="Message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Envoyer formulaire</button>
+                    </form>
+                </section>
+            </div>
+
+            <div id="portfolio" class="main background-portfolio">
+                <section class="container main-section-portfolio portfolio" data-aos="fade-up">
+                    <h2>Portfolio</h2>
+
+                    <ul class="filters">
+                        <li>Toutes</li>
+                        <li>Sites web</li>
+                        <li>Applications mobiles</li>
+                        <li>Applications desktop</li>
+                    </ul>
+
+                    <div class="projets">
+                        <article>
+                            <img src="./images/iron-lol.webp" alt="iron lol">
+                            <div class="overlay">
+                                <h3>Iron lol</h3>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./images/iron-valo.webp" alt="iron valo">
+                            <div class="overlay">
+                                <h3>Iron valo</h3>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./images/rick-roll.jpg" alt="rick roll">
+                            <div class="overlay">
+                                <h3>Rick roll</h3>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./images/war-t-meme.jpg" alt="meme war t">
+                            <div class="overlay">
+                                <h3>Meme war t</h3>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./images/yone.png" alt="yone">
+                            <div class="overlay">
+                                <h3>Yone</h3>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <div id="blog" class="main background-blog">
+                <section class="container main-section-blog blog" data-aos="fade-up">
+                    <h2>Blog</h2>
+
+                    <div class="articles">
+                        <article>
+                            <div>
+                                <img src="./images/article-1.jpg" alt="article 1">
+                            </div>
+                            <div class="blog-content">
+                                <div>Article 1</div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                                <a href="#blog">Lire la suite</a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <img src="./images/article-2.jpg" alt="article 2">
+                            </div>
+                            <div class="blog-content">
+                                <div>Article 2</div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                                <a href="#blog">Lire la suite</a>
+                            </div>
+                        </article>
+                        <article>
+                            <div>
+                                <img src="./images/article-3.jpg" alt="article 3">
+                            </div>
+                            <div class="blog-content">
+                                <div>Article 3</div>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+                                <a href="#blog">Lire la suite</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <div class="background-footer footer-font footer">
+                <section class="container-footer main-section-footer">
+                    <div>
+                        <div>A propos</div>
+                        <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+                    </div>
+
+                    <div>
+                        <div>Derniers articles</div>
+                        <div>
+                            <i class="fa fa-solid fa-chevron-right"></i>
+                            <a href="#blog">Article 1</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-solid fa-chevron-right"></i>
+                            <a href="#blog">Article 2</a>
+                        </div>
+                        <div>
+                            <i class="fa    fa-solid fa-chevron-right"></i>
+                            <a href="#blog">Article 3</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>Me contacter</div>
+                        <div>
+                            <div><i class="fa fa-solid fa-map-pin"></i>Ici ou là bas, je ne sais pas</div>
+                        </div>
+                        <div>
+                            <i class="fa fa-solid fa-envelope"></i>
+                            <a href="mailto:remiguerin503@gmail.com" target="_blank">remiguerin503@gmail.com</a>
+                        </div>
+                        <div>
+                            <i class="fa fa-solid fa-phone"></i>
+                            <a href="Tel:+33767603998">07 67 60 39 98</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>Réseaux sociaux</div>
+                        <div>
+                            <a href="https://www.youtube.com/channel/UC6gOmcu_feDnHoicNvg22uA" target="_blank">
+                                <i class="fa fa-brands fa-youtube" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="https://www.twitch.tv" target="_blank">
+                                <i class="fa fa-brands fa-twitch"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="background-footer2 footer-font2 footer">
+                <section class="main-section-footer2">
+                    <div>
+                        <div>© 2023 Rémi Guerin</div>
+                        <div class="footer-content">
+                            <a href="#">FAQ</a>
+                            <a href="#contact">Me contacter</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    <script>
+        AOS.init({
+            delay: 250,
+        });
+    </script>
+    </body>
+</html>
