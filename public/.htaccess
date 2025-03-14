@@ -1,0 +1,47 @@
+# Use the front controller as index file. It serves as a fallback solution when
+# every other rewrite/redirect fails (e.g. in an aliased environment without
+# mod_rewrite). Additionally, this reduces the matching process for the
+# start page (path "/") because otherwise Apache will apply the rewriting rules
+# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
+DirectoryIndex index.php
+
+# By default, the directory listings are disabled, to enable them
+# in the public directory, remove the following options directive
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# Follow symbolic links in this directory.
+Options +FollowSymlinks
+
+# Disallow access to all hidden files and directories (starting with a dot)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{SCRIPT_FILENAME} -d [OR]
+    RewriteCond %{SCRIPT_FILENAME} -f
+    RewriteRule "(^|/)\." - [F]
+</IfModule>
+
+# Default rewrite rule
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+# Deny access to internal Symfony files and directories
+<FilesMatch ^\.ht>
+    Require all denied
+</FilesMatch>
+
+<FilesMatch ^app\.php$>
+    Require all denied
+</FilesMatch>
+
+<FilesMatch ^config\.(yml|yaml|php|xml)$>
+    Require all denied
+</FilesMatch>
+
+<Directory "var">
+    Require all denied
+</Directory>
