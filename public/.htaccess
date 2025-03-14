@@ -1,47 +1,46 @@
-# Use the front controller as index file. It serves as a fallback solution when
-# every other rewrite/redirect fails (e.g. in an aliased environment without
-# mod_rewrite). Additionally, this reduces the matching process for the
-# start page (path "/") because otherwise Apache will apply the rewriting rules
-# to each configured DirectoryIndex file (e.g. index.php, index.html, index.pl).
-DirectoryIndex index.php
-
-# By default, the directory listings are disabled, to enable them
-# in the public directory, remove the following options directive
-<IfModule mod_autoindex.c>
-    Options -Indexes
-</IfModule>
-
-# Follow symbolic links in this directory.
-Options +FollowSymlinks
-
-# Disallow access to all hidden files and directories (starting with a dot)
+# Utiliser le moteur de réécriture d'Apache
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{SCRIPT_FILENAME} -d [OR]
-    RewriteCond %{SCRIPT_FILENAME} -f
-    RewriteRule "(^|/)\." - [F]
-</IfModule>
 
-# Default rewrite rule
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+    # Rediriger toutes les requêtes vers index.php si le fichier ou dossier demandé n'existe pas
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>
 
-# Deny access to internal Symfony files and directories
-<FilesMatch ^\.ht>
-    Require all denied
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes
+
+# Activer la compression Gzip pour améliorer les performances
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Protéger certains fichiers sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|env)$">
+    Order Allow,Deny
+    Deny from all
 </FilesMatch>
 
-<FilesMatch ^app\.php$>
-    Require all denied
-</FilesMatch>
+# Forcer l'utilisation de HTTPS si disponible
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
 
-<FilesMatch ^config\.(yml|yaml|php|xml)$>
-    Require all denied
-</FilesMatch>
+# Mettre en cache certains types de fichiers pour améliorer les performances
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType text/x-javascript "access plus 1 month"
+    ExpiresByType application/x-shockwave-flash "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
 
-<Directory "var">
-    Require all denied
-</Directory>
+# Désactiver le suivi des liens symboliques
+Options -FollowSymLinks
