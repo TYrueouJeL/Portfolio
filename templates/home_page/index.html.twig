@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portfolio{% endblock %}
+
+{% block body %}
+    <!-- Navbar avec effet de réduction au défilement -->
+    <nav id="navbar" class="fixed top-0 w-full bg-gray-800 text-white py-6 transition-all duration-300 z-10">
+        <div class="max-w-4xl mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">Mon Portfolio</div>
+            <div class="space-x-4">
+                <a href="#about" class="hover:text-gray-300">À propos</a>
+                <a href="#projects" class="hover:text-gray-300">Projets</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Espace pour compenser la hauteur de la navbar -->
+    <div class="h-20"></div>
+
+    <!-- Section d'en-tête avec un fond gris clair -->
+    <header id="home" class="bg-gray-100 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-bold underline">Mon Portfolio</h1>
+            <p class="mt-4 text-lg text-gray-600">Bienvenue sur mon portfolio. Découvrez mes projets et mes compétences en développement web.</p>
+        </div>
+    </header>
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-gray-100"></div>
+
+    <!-- Section "À propos de moi" -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-6 text-center">À propos de moi</h2>
+            <div class="flex flex-col md:flex-row items-center md:justify-around">
+                <img src="path_to_your_photo.jpg" alt="Photo de Rémi Guérin" class="w-32 h-32 rounded-full mb-4 md:mb-0">
+                <div class="text-lg text-gray-700 text-center md:text-left">
+                    <p>Bonjour ! Je suis Rémi Guérin, étudiant en développement et passionné par la création de solutions web innovantes. Actuellement en deuxième année de BTS SIO option SLAM à l'Institut Informatique Appliquée de Laval, j'ai acquis des compétences en HTML, CSS, JavaScript, PHP, SQL, Git, Wordpress, et Symfony.</p>
+                    <p>Je suis autonome, adaptable et toujours prêt à remettre en question mes connaissances pour m'améliorer. Mes centres d'intérêt incluent les jeux vidéo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-gray-100"></div>
+
+    <!-- Section "Mes Projets" -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Mes Projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Carte de projet 1 -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://via.placeholder.com/800x600" alt="Projet Ets KIRSCH" class="w-full h-64 object-cover transition-transform duration-300 transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-white text-2xl font-semibold">Ets KIRSCH</h3>
+                    </div>
+                </div>
+                <!-- Carte de projet 2 -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://via.placeholder.com/800x600" alt="Projet Relais Petite Enfance" class="w-full h-64 object-cover transition-transform duration-300 transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-white text-2xl font-semibold">Relais Petite Enfance</h3>
+                    </div>
+                </div>
+                <!-- Carte de projet 3 -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <img src="https://via.placeholder.com/800x600" alt="Projet Lely Center" class="w-full h-64 object-cover transition-transform duration-300 transform group-hover:scale-105">
+                    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <h3 class="text-white text-2xl font-semibold">Lely Center</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-gray-100"></div>
+
+    <!-- Section "Contact" -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Contact</h2>
+            <form action="#" method="post" class="space-y-4">
+                <div>
+                    <label for="name" class="block text-lg font-medium text-gray-700">Nom</label>
+                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="email" class="block text-lg font-medium text-gray-700">Email</label>
+                    <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                </div>
+                <div>
+                    <label for="message" class="block text-lg font-medium text-gray-700">Message</label>
+                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Envoyer
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-100 text-center">
+        <p class="text-gray-600">&copy; 2023 Rémi Guérin. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // JavaScript pour réduire la navbar au défilement
+        const navbar = document.getElementById('navbar');
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.add('py-6');
+                navbar.classList.remove('py-4');
+            }
+        };
+    </script>
+{% endblock %}
