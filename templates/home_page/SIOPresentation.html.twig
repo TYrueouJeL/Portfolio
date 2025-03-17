@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BTS SIO{% endblock %}
+
+{% block body %}
+    <!-- Section d'en-tête avec un fond gris clair -->
+    <header id="home" class="bg-gray-100 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-4xl font-bold underline">BTS SIO</h1>
+            <p class="mt-4 text-lg text-gray-600">Le BTS SIO (Services Informatiques aux Organisations) est un diplôme de niveau Bac+2.</p>
+            <p class="text-lg text-gray-600">Il forme des experts en informatique, compétents aussi bien en développement qu'en administration et maintenance des réseaux informatiques.</p>
+        </div>
+    </header>
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-gray-100"></div>
+
+    <!-- Section "À propos de moi" -->
+    <<section id="about" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-6 text-center">À propos de moi</h2>
+        <div class="flex flex-col md:flex-row items-center md:justify-around gap-4">
+            <div class="text-lg text-gray-700 text-center md:text-left">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Option SLAM</h2>
+                <p>L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en informatique option SLAM, sont préparés aux métiers de :</p>
+                <ul class="list-disc">
+                    <li>Développeur Web</li>
+                    <li>Développeur d'applications lourdes</li>
+                </ul>
+            </div>
+            <div class="text-lg text-gray-700 text-center md:text-left">
+                <h2 class="text-2xl font-semibold mb-6 text-center">Option SISR</h2>
+                <p>L’option Solutions d’infrastructure, systèmes et réseaux prépare des spécialistes en réseaux et équipements informatiques (installation, maintenance, sécurité). En obtenant un BTS SIO option SISR, vous serez en mesure de gérer et administrer le réseau d’une organisation tout en garantissant sa sécurité et sa maintenance. Les titulaires du BTS SIO option SISR peuvent exercer les métiers suivants :</p>
+                <ul class="list-disc">
+                    <li>Administrateur systèmes et réseaux</li>
+                    <li>Support systèmes et réseaux</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

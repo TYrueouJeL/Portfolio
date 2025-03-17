@@ -13,6 +13,19 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    <!-- Navbar avec effet de réduction au défilement -->
+    <nav id="navbar" class="fixed top-0 w-full bg-gray-800 text-white py-6 transition-all duration-300 z-10">
+        <div class="max-w-4xl mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold"><a href="/">Mon Portfolio</a></div>
+            <div class="space-x-4">
+                <a href="/SIOPresentation" class="hover:text-gray-300">BTS SIO</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Espace pour compenser la hauteur de la navbar -->
+    <div class="h-20"></div>
+
+    {% block body %}{% endblock %}
     </body>
 </html>

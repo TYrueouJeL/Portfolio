@@ -12,6 +12,15 @@ final class HomePageController extends AbstractController
     public function index(): Response
     {
         return $this->render('home_page/index.html.twig', [
+
+        ]);
+    }
+
+    #[Route('/SIOPresentation', name: 'app_SIO_Presentation')]
+    public function SIOPresentation(): Response
+    {
+        return $this->render('home_page/SIOPresentation.html.twig', [
+
         ]);
     }
 }
