@@ -23,4 +23,20 @@ final class HomePageController extends AbstractController
 
         ]);
     }
+
+    #[Route('/KIRSCH', name: 'app_KIRSCH')]
+    public function Kirsch(): Response
+    {
+        return $this->render('home_page/KIRSCH.html.twig', [
+
+        ]);
+    }
+
+    #[Route('RPE', name: 'app_RPE')]
+    public function RPE()
+    {
+        return $this->render('home_page/RPE.html.twig', [
+
+        ]);
+    }
 }
