@@ -68,9 +68,9 @@
 
     <section id="Compétences" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-semibold mb-6 text-center">Stages</h2>
+            <h2 class="text-3xl font-semibold mb-6 text-center">Mes compétences</h2>
             <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <a href="/files/Tableau%20de%20compétences.xlsx" target="_blank" class="font-semibold text-center">Mes compétences</a>
+                <a href="/files/Tableau%20de%20compétences.xlsx" target="_blank" class="font-semibold text-center">Tableau de compétences</a>
             </button>
         </div>
     </section>
@@ -100,4 +100,50 @@
 {#            </form>#}
 {#        </div>#}
 {#    </section>#}
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-gray-100"></div>
+
+    <!-- Section "Mes Stages" -->
+    <section id="projects" class="py-16 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Veille technologique</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <!-- Carte de stage 1 -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <a href="https://www.youtube.com/@Underscore_" target="_blank">
+                        <img src="/images/underscore.png" alt="Underscore_" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-semibold">Underscore_</h3>
+                        </div>
+                    </a>
+                </div>
+                <!-- Carte de stage 2 -->
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <a href="https://grafikart.fr" target="_blank">
+                        <img src="/images/grafikart.jpg" alt="Grafikart" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-semibold">Grafikart</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espace entre les sections -->
+    <div class="h-20 bg-white"></div>
+
+    <!-- Section "Mes Stages" -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Poursuites d'étude possibles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+                <ul>
+                    <li>License professionnelle en développement web ou logicel</li>
+                    <li>Formation en alternance pour avoir plus d'expérience en entreprise tout en poursuivant mes études supérieures</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 {% endblock %}
