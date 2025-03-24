@@ -1,1 +1,2 @@
 sudo -u www-data git pull
+systemctl reload apache2
