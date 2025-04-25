@@ -1,6 +1,5 @@
 sudo -u www-data git pull
 npm run build
 systemctl reload apache2
-
 php bin/console cache:clear
 chown -R www-data:www-data /var/www/portfolio/
