@@ -1,3 +1,4 @@
+cd /var/www/portfolio
 sudo -u www-data git pull
 npm run build
 systemctl reload apache2
