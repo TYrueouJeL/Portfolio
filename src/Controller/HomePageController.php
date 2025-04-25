@@ -16,14 +16,6 @@ final class HomePageController extends AbstractController
         ]);
     }
 
-    #[Route('/SIOPresentation', name: 'app_SIO_Presentation')]
-    public function SIOPresentation(): Response
-    {
-        return $this->render('home_page/SIOPresentation.html.twig', [
-
-        ]);
-    }
-
     #[Route('/KIRSCH', name: 'app_KIRSCH')]
     public function Kirsch(): Response
     {
