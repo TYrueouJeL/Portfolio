@@ -79,75 +79,30 @@
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-6 text-center">Mes Projets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <a href="https://github.com/TYrueouJeL/WorkTogether" target="_blank">
-                        <img src="/images/worktogetherweb.png" alt="Worktogether (Client léger)" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-white text-2xl font-semibold">Worktogether (Client léger)</h3>
-                        </div>
-                        <div class="text-lg text-gray-700 text-center md:text-left">
-                            <h2 class="text-2xl font-semibold mb-6 text-center">Worktogether (Client léger)</h2>
-                            <p>Worktogether Web est un site permettant de réserver et de gérer des unités dans des baies informatiques.</p>
-                            <p>Technologies :</p>
-                            <ul>
-                                <li>Symfony</li>
-                                <li>MySql</li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <a href="https://github.com/TYrueouJeL/W2G" target="_blank">
-                        <img src="/images/worktogetherdesktop.png" alt="Worktogether (Projet lourd)" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-white text-2xl font-semibold">Worktogether (Projet lourd)</h3>
-                        </div>
-                        <div class="text-lg text-gray-700 text-center md:text-left">
-                            <h2 class="text-2xl font-semibold mb-6 text-center">Worktogether (Projet lourd)</h2>
-                            <p>Worktogether Desktop est un logiciel permettant à des administrateurs de gérer les offres disponibles et à des techniciens de noter les interventions faites sur les unités.</p>
-                            <p>Technologies :</p>
-                            <ul>
-                                <li>C# WPF</li>
-                                <li>MySql</li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <a href="https://github.com/TYrueouJeL/Portfolio" target="_blank">
-                        <img src="/images/portfolio.png" alt="Portfolio" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-white text-2xl font-semibold">Portfolio</h3>
-                        </div>
-                        <div class="text-lg text-gray-700 text-center md:text-left">
-                            <h2 class="text-2xl font-semibold mb-6 text-center">Portfolio</h2>
-                            <p>Portfolio en ligne</p>
-                            <p>Technologies :</p>
-                            <ul>
-                                <li>Symfony</li>
-                                <li>Serveur Web Apache</li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
-                <div class="relative overflow-hidden rounded-lg shadow-lg group">
-                    <a href="https://github.com/TYrueouJeL/Ilyn-Revival" target="_blank">
-                        <img src="/images/ilynrevival.png" alt="Ilyn Revival" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
-                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <h3 class="text-white text-2xl font-semibold">Ilyn Revival</h3>
-                        </div>
-                        <div class="text-lg text-gray-700 text-center md:text-left">
-                            <h2 class="text-2xl font-semibold mb-6 text-center">Ilyn Revival</h2>
-                            <p>Ilyn Revival est un RPG sous forme de bot discord.</p>
-                            <p>Technologies :</p>
-                            <ul>
-                                <li>Javascript</li>
-                                <li>Node</li>
-                                <li>MySql</li>
-                            </ul>
-                        </div>
-                    </a>
-                </div>
+                {% for repo in repositories %}
+                    <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                        <a href="{{ repo.html_url }}" target="_blank">
+                            {% if repo.presentationImageUrl is not null %}
+                                <img src="{{ repo.presentationImageUrl }}" alt="{{ repo.name }}" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105">
+                            {% else %}
+                                <img src="{{ repo.owner.avatar_url }}" alt="{{ repo.name }}" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105">
+                            {% endif %}
+                            <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <h3 class="text-white text-2xl font-semibold">{{ repo.name }}</h3>
+                            </div>
+                            <div class="text-lg text-gray-700 text-center md:text-left">
+                                <h2 class="text-2xl font-semibold mb-6 text-center">{{ repo.name }}</h2>
+                                <p>{{ repo.description }}</p>
+                                <p>Technologies utilisées :</p>
+                                <ul>
+                                    {% for tech in repo.technologies %}
+                                        <li>{{ tech }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -250,6 +205,22 @@
                         <img src="/images/grafikart.jpg" alt="Grafikart" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-white text-2xl font-semibold">Grafikart</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <a href="https://www.youtube.com/@CodingWithLewis" target="_blank">
+                        <img src="/images/grafikart.jpg" alt="CodingWithLewis" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-semibold">CodingWithLewis</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                    <a href="https://www.youtube.com/@pixelcrafted.raphael/featured" target="_blank">
+                        <img src="/images/grafikart.jpg" alt="pixelcrafted" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <h3 class="text-white text-2xl font-semibold">pixelcrafted</h3>
                         </div>
                     </a>
                 </div>
