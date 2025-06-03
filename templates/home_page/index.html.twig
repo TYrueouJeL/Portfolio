@@ -11,9 +11,6 @@
         </div>
     </header>
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
     <!-- Section "À propos de moi" -->
     <section id="about" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
@@ -31,11 +28,20 @@
         </div>
     </section>
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
-    <!-- Section d'en-tête avec un fond gris clair -->
+    <!-- Section "Bac STI2D" avec fond gris -->
     <header id="home" class="bg-gray-100 py-20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-6 text-center">Bac STI2D</h2>
+            <p class="mt-4 text-lg text-gray-600">Le Bac STI2D (Sciences et Technologies de l'Industrie et du Développement Durable) est un diplôme de niveau Bac.</p>
+            <p class="text-lg text-gray-600">Il forme des élèves aux sciences et technologies industrielles, compétents aussi bien en innovation technologique qu'en développement durable et en systèmes d'information.</p>
+
+            <h2 class="text-2xl font-semibold mb-3 mt-6 text-center">Option SIN</h2>
+            <p class="text-lg text-gray-600">Cette spécialité couvre les domaines des réseaux informatiques et des objets connectés, préparant aux études supérieures en informatique et aux métiers du numérique.</p>
+        </div>
+    </header>
+
+    <!-- Section "BTS SIO" avec fond blanc -->
+    <header class="bg-white py-20">
         <div class="max-w-4xl mx-auto text-center">
             <h2 class="text-3xl font-semibold mb-6 text-center">BTS SIO</h2>
             <p class="mt-4 text-lg text-gray-600">Le BTS SIO (Services Informatiques aux Organisations) est un diplôme de niveau Bac+2.</p>
@@ -43,17 +49,14 @@
         </div>
     </header>
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
-    <!-- Section "À propos de moi" -->
-    <section id="about" class="py-16 bg-white">
+    <!-- Section "Les options" avec fond gris -->
+    <section id="about" class="py-16 bg-gray-100">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-6 text-center">Les options</h2>
             <div class="flex flex-col md:flex-row items-center md:justify-around gap-4">
                 <div class="text-lg text-gray-700 text-center md:text-left">
                     <h2 class="text-2xl font-semibold mb-6 text-center">Option SLAM</h2>
-                    <p>L’option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d’un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en informatique option SLAM, sont préparés aux métiers de :</p>
+                    <p>L'option Solutions logicielles et applications métiers forme des spécialistes des logiciels (rédaction d'un cahier des charges, formulation des besoins et spécifications, développement, intégration au sein de la société). Les techniciens supérieurs en informatique option SLAM, sont préparés aux métiers de :</p>
                     <ul class="list-disc">
                         <li>Développeur Web</li>
                         <li>Développeur d'applications lourdes</li>
@@ -61,7 +64,7 @@
                 </div>
                 <div class="text-lg text-gray-700 text-center md:text-left">
                     <h2 class="text-2xl font-semibold mb-6 text-center">Option SISR</h2>
-                    <p>L’option Solutions d’infrastructure, systèmes et réseaux prépare des spécialistes en réseaux et équipements informatiques (installation, maintenance, sécurité). En obtenant un BTS SIO option SISR, vous serez en mesure de gérer et administrer le réseau d’une organisation tout en garantissant sa sécurité et sa maintenance. Les titulaires du BTS SIO option SISR peuvent exercer les métiers suivants :</p>
+                    <p>L'option Solutions d'infrastructure, systèmes et réseaux prépare des spécialistes en réseaux et équipements informatiques (installation, maintenance, sécurité). En obtenant un BTS SIO option SISR, vous serez en mesure de gérer et administrer le réseau d'une organisation tout en garantissant sa sécurité et sa maintenance. Les titulaires du BTS SIO option SISR peuvent exercer les métiers suivants :</p>
                     <ul class="list-disc">
                         <li>Administrateur systèmes et réseaux</li>
                         <li>Support systèmes et réseaux</li>
@@ -71,11 +74,8 @@
         </div>
     </section>
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
-    <!-- Section "Mes Stages" -->
-    <section id="projects" class="py-16 bg-gray-100">
+    <!-- Section "Mes Projets" avec fond blanc -->
+    <section id="projects" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-6 text-center">Mes Projets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -85,7 +85,6 @@
                             {% if repo.presentationImageUrl is not null %}
                                 <img src="{{ repo.presentationImageUrl }}" alt="{{ repo.name }}" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105">
                             {% else %}
-                                <img src="{{ repo.owner.avatar_url }}" alt="{{ repo.name }}" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105">
                             {% endif %}
                             <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <h3 class="text-white text-2xl font-semibold">{{ repo.name }}</h3>
@@ -107,11 +106,8 @@
         </div>
     </section>
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
-    <!-- Section "Mes Stages" -->
-    <section id="internships" class="py-16 bg-white">
+    <!-- Section "Mes Stages" avec fond gris -->
+    <section id="internships" class="py-16 bg-gray-100">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-6 text-center">Mes Stages</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -156,37 +152,34 @@
         </div>
     </section>
 
-{#    <!-- Section "Contact" -->#}
-{#    <section id="contact" class="py-16 bg-white">#}
-{#        <div class="max-w-4xl mx-auto px-4">#}
-{#            <h2 class="text-3xl font-semibold mb-6 text-center">Contact</h2>#}
-{#            <form action="#" method="post" class="space-y-4">#}
-{#                <div>#}
-{#                    <label for="name" class="block text-lg font-medium text-gray-700">Nom</label>#}
-{#                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">#}
-{#                </div>#}
-{#                <div>#}
-{#                    <label for="email" class="block text-lg font-medium text-gray-700">Email</label>#}
-{#                    <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">#}
-{#                </div>#}
-{#                <div>#}
-{#                    <label for="message" class="block text-lg font-medium text-gray-700">Message</label>#}
-{#                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>#}
-{#                </div>#}
-{#                <div class="text-center">#}
-{#                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">#}
-{#                        Envoyer#}
-{#                    </button>#}
-{#                </div>#}
-{#            </form>#}
-{#        </div>#}
-{#    </section>#}
+    {#    <!-- Section "Contact" -->#}
+    {#    <section id="contact" class="py-16 bg-white">#}
+    {#        <div class="max-w-4xl mx-auto px-4">#}
+    {#            <h2 class="text-3xl font-semibold mb-6 text-center">Contact</h2>#}
+    {#            <form action="#" method="post" class="space-y-4">#}
+    {#                <div>#}
+    {#                    <label for="name" class="block text-lg font-medium text-gray-700">Nom</label>#}
+    {#                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">#}
+    {#                </div>#}
+    {#                <div>#}
+    {#                    <label for="email" class="block text-lg font-medium text-gray-700">Email</label>#}
+    {#                    <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">#}
+    {#                </div>#}
+    {#                <div>#}
+    {#                    <label for="message" class="block text-lg font-medium text-gray-700">Message</label>#}
+    {#                    <textarea id="message" name="message" rows="4" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"></textarea>#}
+    {#                </div>#}
+    {#                <div class="text-center">#}
+    {#                    <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-lg font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">#}
+    {#                        Envoyer#}
+    {#                    </button>#}
+    {#                </div>#}
+    {#            </form>#}
+    {#        </div>#}
+    {#    </section>#}
 
-    <!-- Espace entre les sections -->
-    <div class="h-20 bg-gray-100"></div>
-
-    <!-- Section "Mes Stages" -->
-    <section id="projects" class="py-16 bg-gray-100">
+    <!-- Section "Veille technologique" avec fond blanc -->
+    <section id="projects" class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-6 text-center">Veille technologique</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
@@ -210,7 +203,7 @@
                 </div>
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
                     <a href="https://www.youtube.com/@CodingWithLewis" target="_blank">
-                        <img src="/images/grafikart.jpg" alt="CodingWithLewis" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <img src="/images/codingWithLewis.png" alt="CodingWithLewis" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-white text-2xl font-semibold">CodingWithLewis</h3>
                         </div>
@@ -218,7 +211,7 @@
                 </div>
                 <div class="relative overflow-hidden rounded-lg shadow-lg group">
                     <a href="https://www.youtube.com/@pixelcrafted.raphael/featured" target="_blank">
-                        <img src="/images/grafikart.jpg" alt="pixelcrafted" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
+                        <img src="/images/pixelCrafted.png" alt="pixelcrafted" class="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105" width="800" height="600">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <h3 class="text-white text-2xl font-semibold">pixelcrafted</h3>
                         </div>
