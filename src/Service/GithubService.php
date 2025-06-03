@@ -68,37 +68,42 @@ class GithubService
 
     public function getTechnologiesUsed(string $repoName)
     {
-        $files = $this->getRepositoryFiles($repoName);
-        $technologies = [];
+        $languages = $this->getRepositoryLanguages($repoName);
+        $topics = $this->getRepositoryTopics($repoName);
 
-        foreach ($files['tree'] as $file) {
-            $extension = pathinfo($file['path'], PATHINFO_EXTENSION);
-            switch ($extension) {
-                case 'php':
-                    $technologies['PHP'] = true;
-                    break;
-                case 'js':
-                    $technologies['JavaScript'] = true;
-                    break;
-                case 'html':
-                    $technologies['HTML'] = true;
-                    break;
-                case 'css':
-                    $technologies['CSS'] = true;
-                    break;
-                case 'py':
-                    $technologies['Python'] = true;
-                    break;
-                case 'java':
-                    $technologies['Java'] = true;
-                    break;
-                case 'cs':
-                    $technologies['C#'] = true;
-                // Ajoutez d'autres extensions et technologies selon vos besoins
-            }
-        }
+        return array_merge(array_keys($languages), $topics);
+    }
 
-        return array_keys($technologies);
+    public function getRepositoryLanguages(string $repoName)
+    {
+        $response = $this->client->request(
+            'GET',
+            "https://api.github.com/repos/{$this->username}/{$repoName}/languages",
+            [
+                'headers' => [
+                    'Authorization' => "token {$this->token}",
+                    'Accept' => 'application/vnd.github.v3+json',
+                ],
+            ]
+        );
+
+        return $response->toArray();
+    }
+
+    public function getRepositoryTopics(string $repoName)
+    {
+        $response = $this->client->request(
+            'GET',
+            "https://api.github.com/repos/{$this->username}/{$repoName}/topics",
+            [
+                'headers' => [
+                    'Authorization' => "token {$this->token}",
+                    'Accept' => 'application/vnd.github.v3+json',
+                ],
+            ]
+        );
+
+        return $response->toArray()['names'] ?? [];
     }
 
     public function getPresentationImageUrl(string $repoName)
