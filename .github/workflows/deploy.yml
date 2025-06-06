@@ -58,14 +58,14 @@ jobs:
 
             # Construction et démarrage des nouveaux conteneurs
             echo "🏗️ Construction des images Docker..."
-            docker-compose -f docker-compose.prod.yml build --no-cache
+            docker-compose -f docker-compose.prod.yaml build --no-cache
 
             echo "🚀 Démarrage des conteneurs..."
-            docker-compose -f docker-compose.prod.yml up -d
+            docker-compose -f docker-compose.prod.yaml up -d
 
             # Vérification du statut
             echo "✅ Vérification du statut des conteneurs..."
-            docker-compose -f docker-compose.prod.yml ps
+            docker-compose -f docker-compose.prod.yaml ps
 
             # Nettoyage des images non utilisées
             echo "🧹 Nettoyage des images Docker..."
