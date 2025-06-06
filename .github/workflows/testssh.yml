@@ -1,0 +1,24 @@
+name: Test SSH Simple
+
+on:
+  workflow_dispatch:
+
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Test SSH connection
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: root
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        timeout: 30s
+        script: |
+          echo "=== Test de connexion réussi ==="
+          whoami
+          hostname
+          date
+          echo "SSH fonctionne depuis Github Actions !"
