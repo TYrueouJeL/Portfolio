@@ -32,6 +32,11 @@ jobs:
               sudo apt update
               sudo apt install -y docker-ce
               sudo usermod -aG docker $USER
+            
+              echo "🔄 Redémarrage du service Docker..."
+              sudo systemctl restart docker
+              newgrp docker
+              echo "✅ Docker installé et configuré."
             fi
             
             if ! command -v docker-compose &> /dev/null; then
