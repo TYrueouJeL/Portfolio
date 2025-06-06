@@ -59,8 +59,8 @@ RUN mkdir -p /var/www/remiguerin.fr/var \
     && chmod -R 775 /var/www/remiguerin.fr/var \
     && chown -R www-data:www-data /var/www/remiguerin.fr/var
 
-# Nettoyage du cache Symfony (seulement si c'est un projet Symfony)
-RUN if [ -f "bin/console" ]; then php bin/console cache:clear --env=prod --no-debug; fi
+ENV APP_ENV=prod
+ENV DATABASE_URL=mysql://temp:temp@db_host:3306/portfolio
 
 EXPOSE 9000
 
