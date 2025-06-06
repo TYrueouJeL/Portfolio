@@ -35,7 +35,6 @@ jobs:
             
               echo "🔄 Redémarrage du service Docker..."
               sudo systemctl restart docker
-              newgrp docker
               echo "✅ Docker installé et configuré."
             fi
             
@@ -59,21 +58,21 @@ jobs:
             
             # Arrêt des conteneurs existants
             echo "🛑 Arrêt des conteneurs existants..."
-            docker-compose -f docker-compose.prod.yaml down 2>/dev/null || true
+            sudo docker-compose -f docker-compose.prod.yaml down 2>/dev/null || true
 
             # Construction et démarrage des nouveaux conteneurs
             echo "🏗️ Construction des images Docker..."
-            docker-compose -f docker-compose.prod.yaml build --no-cache
+            sudo docker-compose -f docker-compose.prod.yaml build --no-cache
 
             echo "🚀 Démarrage des conteneurs..."
-            docker-compose -f docker-compose.prod.yaml up -d
+            sudo docker-compose -f docker-compose.prod.yaml up -d
 
             # Vérification du statut
             echo "✅ Vérification du statut des conteneurs..."
-            docker-compose -f docker-compose.prod.yaml ps
+            sudo docker-compose -f docker-compose.prod.yaml ps
 
             # Nettoyage des images non utilisées
             echo "🧹 Nettoyage des images Docker..."
-            docker image prune -f
+            sudo docker image prune -f
 
             echo "🎉 Déploiement terminé ! Votre site est accessible sur http://remiguerin.fr"
