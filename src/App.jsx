@@ -26,7 +26,7 @@ const CV = {
         { name: 'JavaScript', level: 100 },
         { name: 'React', level: 100 },
         { name: 'PHP', level: 100 },
-        { name: 'Symfony', level: 10 },
+        { name: 'Symfony', level: 100 },
         { name: 'SQL', level: 100 },
         { name: 'Git', level: 100 },
         { name: 'WordPress', level: 70 },

@@ -30,7 +30,9 @@ jobs:
               username: ${{ secrets.VPS_USER }}
               password: ${{ secrets.VPS_PASSWORD }}
               script: |
+                cd /home/${{ secrets.VPS_USER }}/portfolio || mkdir /home/${{ secrets.VPS_USER }}/portfolio && cd /home/${{ secrets.VPS_USER }}/portfolio
+                echo "Pulling latest Docker image..."
                 docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
-                docker stop portfolio || true
-                docker rm portfolio || true
-                docker run -d -p 80:80 --name portfolio ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+                echo "Stopping existing container..."
+                docker compose down || true
+                docker compose up -d
