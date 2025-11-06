@@ -15,9 +15,7 @@ jobs:
           - name: Build Docker Image
             env:
               VITE_GITHUB_TOKEN: ${{ secrets.VITE_GITHUB_TOKEN }}
-            run: docker build \
-              --build-arg VITE_GITHUB_TOKEN=${{ secrets.VITE_GITHUB_TOKEN }} \
-              -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest .
+            run: docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest --build-arg VITE_GITHUB_TOKEN=${{ secrets.VITE_GITHUB_TOKEN }} .
 
           - name: Log in to Docker Hub
             run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
