@@ -5,7 +5,7 @@ RUN npm ci --only=production
 COPY . .
 ARG VITE_GITHUB_TOKEN
 ENV VITE_GITHUB_TOKEN=$VITE_GITHUB_TOKEN
-RUN npm run build && npm cache clean --force
+RUN npm run build
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
