@@ -1,11 +1,11 @@
 FROM node:20-alpine as build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci --only=production
 COPY . .
 ARG VITE_GITHUB_TOKEN
 ENV VITE_GITHUB_TOKEN=$VITE_GITHUB_TOKEN
-RUN npm run build
+RUN npm run build && npm cache clean --force
 
 FROM nginx:alpine
 COPY --from=build /app/dist /usr/share/nginx/html
