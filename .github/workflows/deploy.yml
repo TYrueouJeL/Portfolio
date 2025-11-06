@@ -1,0 +1,28 @@
+name: Deploy React App to Hostinger VPS
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout repository
+            uses: actions/checkout@v4
+
+          - name: Build Docker Image
+            run: docker build -t ${{ secrets.DOCKER_USERNAME }}/portfolio:latest .
+
+          - name: Deploy on Hostinger VPS
+            uses: appleboy/ssh-action@v1.1.0
+            with:
+              host: ${{ secrets.VPS_HOST }}
+              username: ${{ secrets.VPS_USER }}
+              password: ${{ secrets.VPS_PASSWORD }}
+              script: |
+                docker pull ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
+                docker stop portfolio || true
+                docker rm portfolio || true
+                docker run -d -p 80:80 --name portfolio ${{ secrets.DOCKER_USERNAME }}/portfolio:latest
