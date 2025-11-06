@@ -21,15 +21,15 @@ const CV = {
         {date: '2023 - 2025', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM (niveau BTS)'}
     ],
     skills: [
-        { name: 'HTML', level: 95 },
-        { name: 'CSS', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'React', level: 80 },
-        { name: 'PHP', level: 75 },
-        { name: 'SQL', level: 70 },
-        { name: 'Git', level: 85 },
-        { name: 'WordPress', level: 80 },
-        { name: 'Symfony', level: 65 }
+        { name: 'HTML', level: 100 },
+        { name: 'CSS', level: 100 },
+        { name: 'JavaScript', level: 100 },
+        { name: 'React', level: 100 },
+        { name: 'PHP', level: 100 },
+        { name: 'Symfony', level: 10 },
+        { name: 'SQL', level: 100 },
+        { name: 'Git', level: 100 },
+        { name: 'WordPress', level: 70 },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
