@@ -3,6 +3,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
+ARG VITE_GITHUB_TOKEN
+ENV VITE_GITHUB_TOKEN=$VITE_GITHUB_TOKEN
 RUN npm run build
 
 FROM nginx:alpine
