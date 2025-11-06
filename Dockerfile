@@ -1,7 +1,7 @@
 FROM node:20-alpine as build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm i
 COPY . .
 ARG VITE_GITHUB_TOKEN
 ENV VITE_GITHUB_TOKEN=$VITE_GITHUB_TOKEN
