@@ -196,6 +196,7 @@ function Projects() {
                     },
                 })
                 const data = await res.json()
+                console.log(data);
                 const filtered = data.filter(repo => !repo.fork && repo.description)
 
                 const reposWithDetails = await Promise.all(
