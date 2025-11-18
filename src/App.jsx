@@ -21,15 +21,17 @@ const CV = {
         {date: '2023 - 2025', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM (niveau BTS)'}
     ],
     skills: [
-        { name: 'HTML', level: 100 },
-        { name: 'CSS', level: 100 },
-        { name: 'JavaScript', level: 100 },
+        { name: 'HTML, CSS, Javascript', level: 100 },
+        { name: 'Node.js', level: 75 },
+        { name: 'Adonis', level: 10 },
+        { name: 'NuxtJS', level: 80 },
         { name: 'React', level: 100 },
         { name: 'PHP', level: 100 },
         { name: 'Symfony', level: 100 },
         { name: 'SQL', level: 100 },
         { name: 'Git', level: 100 },
-        { name: 'WordPress', level: 70 },
+        { name: 'C#', level: 100 },
+        { name: 'Unity', level: 40 },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
@@ -196,8 +198,7 @@ function Projects() {
                     },
                 })
                 const data = await res.json()
-                console.log(data);
-                const filtered = data.filter(repo => !repo.fork && repo.description)
+                console.log(data);                const filtered = data.filter(repo => !repo.fork && repo.description)
 
                 const reposWithDetails = await Promise.all(
                     filtered.map(async (repo) => {
