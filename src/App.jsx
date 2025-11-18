@@ -24,7 +24,7 @@ const CV = {
         { name: 'HTML, CSS, Javascript', level: 100 },
         { name: 'Node.js', level: 75 },
         { name: 'Adonis', level: 10 },
-        { name: 'NuxtJS', level: 80 },
+        { name: 'NuxtJS', level: 10 },
         { name: 'React', level: 100 },
         { name: 'PHP', level: 100 },
         { name: 'Symfony', level: 100 },
