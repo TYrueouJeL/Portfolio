@@ -107,10 +107,12 @@ function Header() {
                             key={item.id}
                             href={`#${item.id}`}
                             className={`relative transition-all duration-300 
-                                ${activeSection === item.id ? 'text-indigo-600 font-semibold' : 'text-gray-700 hover:text-indigo-500'}
+                                ${activeSection === item.id 
+                                    ? 'text-indigo-600 dark:text-indigo-400 font-semibold' 
+                                    : 'text-gray-700 dark:text-gray-200 hover:text-indigo-500 dark:hover:text-white'}
                                 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:rounded 
                                 after:transition-all after:duration-300
-                                ${activeSection === item.id ? 'after:bg-indigo-600' : 'after:bg-transparent hover:after:bg-indigo-300'}
+                                ${activeSection === item.id ? 'after:bg-indigo-600' : 'after:bg-transparent hover:after:bg-indigo-300 dark:hover:after:bg-indigo-500/70'}
                             `}
                         >
                             {item.label}
@@ -136,12 +138,12 @@ function Hero() {
                         <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 transition-colors">Voir mes compétences</a>
                     </div>
                 </div>
-                <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-lg shadow-lg">
-                    <div className="bg-white/60 p-4 rounded">
+                <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-lg shadow-lg dark:from-gray-800 dark:to-gray-900">
+                    <div className="bg-white/60 dark:bg-gray-800/60 p-4 rounded">
                         <p className="text-sm text-gray-500">Compétences clés</p>
                         <div className="mt-3 flex flex-wrap gap-2">
                             {CV.skills.map(skill => (
-                                <span key={skill.name} className="px-3 py-1 text-sm border rounded-full">{skill.name}</span>
+                                <span key={skill.name} className="px-3 py-1 text-sm border rounded-full border-gray-200 dark:border-gray-600">{skill.name}</span>
                             ))}
                         </div>
                     </div>
@@ -164,7 +166,7 @@ function Skills() {
                             key={skill.name}
                             data-aos="zoom-in"
                             data-aos-delay={idx * 50}
-                            className="relative group p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400"
+                            className="relative group p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-indigo-500"
                         >
                             <div className="flex justify-between items-center gap-3">
                                 <p className="font-semibold">{skill.name}</p>
@@ -173,7 +175,7 @@ function Skills() {
                                 </span>
                             </div>
                             <div className="mt-4 space-y-1">
-                                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Jalons</p>
+                                <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Jalons</p>
                                 <div className="flex flex-wrap gap-1">
                                     {(SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]).map((milestone, milestoneIndex) => {
                                         const currentTrack = SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]
@@ -183,7 +185,9 @@ function Skills() {
                                             <span
                                                 key={`${skill.name}-${milestone}`}
                                                 className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
-                                                    reached ? 'bg-indigo-600 text-white border-indigo-600' : 'text-gray-400 border-gray-200'
+                                                    reached
+                                                        ? 'bg-indigo-600 text-white border-indigo-600'
+                                                        : 'text-gray-400 border-gray-200 dark:text-gray-500 dark:border-gray-700'
                                                 }`}
                                             >
                                                 {milestone}
@@ -194,9 +198,9 @@ function Skills() {
                             </div>
                             {skill.description && (
                                 <div className="pointer-events-none absolute inset-x-0 -bottom-3 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                                    <div className="relative mx-auto max-w-xs rounded-lg border border-indigo-100 bg-white p-3 text-xs text-gray-600 shadow-lg">
+                                    <div className="relative mx-auto max-w-xs rounded-lg border border-indigo-100 bg-white dark:bg-gray-900 dark:border-gray-700 p-3 text-xs text-gray-600 dark:text-gray-300 shadow-lg">
                                         <p className="mt-1 leading-relaxed">{skill.description}</p>
-                                        <span className="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rotate-45 border-t border-l border-indigo-100 bg-white" />
+                                        <span className="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rotate-45 border-t border-l border-indigo-100 bg-white dark:bg-gray-900" />
                                     </div>
                                 </div>
                             )}
@@ -237,10 +241,10 @@ function Experiences() {
                                 >
                                     <div>
                                         <p className="font-semibold text-lg">{e.place}</p>
-                                        <p className="text-sm text-gray-500">{e.date}</p>
+                                        <p className="text-sm text-gray-500 dark:text-gray-400">{e.date}</p>
                                     </div>
                                     <div className="flex items-center gap-4">
-                                        <p className="text-sm text-gray-600 hidden sm:block">{e.desc}</p>
+                                        <p className="text-sm text-gray-600 dark:text-gray-300 hidden sm:block">{e.desc}</p>
                                         <span
                                             className={`h-6 w-6 flex items-center justify-center rounded-full border border-indigo-200 text-indigo-600 transition-transform ${
                                                 expanded ? 'rotate-180' : ''
@@ -265,8 +269,8 @@ function Experiences() {
                                                 />
                                             )}
                                             <div className="flex-1">
-                                                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide">Missions</p>
-                                                <p className="mt-2 text-gray-700 leading-relaxed whitespace-pre-line">{e.description}</p>
+                                                <p className="text-sm text-gray-500 dark:text-gray-400 font-semibold uppercase tracking-wide">Missions</p>
+                                                <p className="mt-2 text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">{e.description}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -294,7 +298,7 @@ function Projects() {
                     },
                 })
                 const data = await res.json()
-                console.log(data);                const filtered = data.filter(repo => !repo.fork && repo.description)
+                const filtered = data.filter(repo => !repo.fork && repo.description)
 
                 const reposWithDetails = await Promise.all(
                     filtered.map(async (repo) => {
@@ -384,12 +388,12 @@ function Projects() {
 // ------------------------------------------------------
 function Contact() {
     return (
-        <section className="py-20 bg-gradient-to-r from-white to-indigo-50" id="contact">
+        <section className="py-20 bg-gradient-to-r from-white to-indigo-50 dark:from-gray-900 dark:to-gray-900" id="contact">
             <div className="max-w-5xl mx-auto px-6 text-center">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Contact</h2>
-                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600">Tu peux me contacter directement :</p>
-                <div data-aos="fade-up" data-aos-delay="200" className="mt-6 space-y-2">
-                    <p data-aos="fade-up" data-aos-delay="300" className="text-lg font-medium">📧 {CV.email}</p>
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">Tu peux me contacter directement :</p>
+                <div data-aos="fade-up" data-aos-delay="200" className="mt-6 space-y-2 fade-up">
+                    <p data-aos="fade-up" data-aos-delay="300" className="text-lg font-medium text-gray-800 dark:text-gray-100"> {CV.email}</p>
                 </div>
             </div>
         </section>
@@ -399,8 +403,8 @@ function Contact() {
 // ------------------------------------------------------
 function Footer() {
     return (
-        <footer className="py-8 border-t mt-12">
-            <div className="max-w-5xl mx-auto px-6 text-center text-sm text-gray-500">
+        <footer className="py-8 border-t mt-12 border-gray-200 dark:border-gray-800">
+            <div className="max-w-5xl mx-auto px-6 text-center text-sm text-gray-500 dark:text-gray-400">
                 © {new Date().getFullYear()} Rémi Guerin — Portfolio
             </div>
         </footer>
