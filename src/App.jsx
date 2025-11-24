@@ -23,7 +23,7 @@ const CV = {
     skills: [
         { name: 'HTML, CSS, Javascript', level: 100 },
         { name: 'Node.js', level: 75 },
-        { name: 'Adonis', level: 10 },
+        { name: 'Adonis', level: 25 },
         { name: 'NuxtJS', level: 10 },
         { name: 'React', level: 100 },
         { name: 'PHP', level: 100 },
