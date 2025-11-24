@@ -21,20 +21,32 @@ const CV = {
         {date: '2023 - 2025', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM (niveau BTS)'}
     ],
     skills: [
-        { name: 'HTML, CSS, Javascript', level: 100 },
-        { name: 'Node.js', level: 75 },
-        { name: 'Adonis', level: 25 },
-        { name: 'NuxtJS', level: 10 },
-        { name: 'React', level: 100 },
-        { name: 'PHP', level: 100 },
-        { name: 'Symfony', level: 100 },
-        { name: 'SQL', level: 100 },
-        { name: 'Git', level: 100 },
-        { name: 'C#', level: 100 },
-        { name: 'Unity', level: 40 },
+        { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Stack front complet pour maquetter et livrer des interfaces responsive.' },
+        { name: 'Node.js', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Développement de APIs et scripts backend sur l’écosystème JavaScript.' },
+        { name: 'Adonis', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node plein stack utilisé pour structurer mes APIs.' },
+        { name: 'NuxtJS', status: 'En cours d’apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Meta-framework Vue pour générer des sites performants côté front.' },
+        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Création d’interfaces dynamiques, hooks personnalisés et optimisation des states.' },
+        { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Développement serveur classique et scripts métiers en PHP moderne.' },
+        { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Applications web structurées avec bundles, services et tests fonctionnels.' },
+        { name: 'SQL', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Modélisation de bases de données et requêtes optimisées (MySQL / PostgreSQL).' },
+        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Gestion de versions, code review et flux Git collaboratifs.' },
+        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Développement d’apps desktop / jeux avec .NET et Unity.' },
+        { name: 'Unity', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Prototypage de gameplay et intégration d’assets 2D/3D.' },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
+
+const SKILL_STATUS_STYLES = {
+    'Maîtrisé': 'text-emerald-700 bg-emerald-100',
+    'En cours d’apprentissage': 'text-amber-700 bg-amber-100',
+}
+
+const SKILL_MILESTONES = {
+    project: ['Hello World', 'Premier projet', 'Projets livrés', 'Expertise'],
+    fundamentals: ['Bases', 'Production', 'Optimisation', 'Expertise'],
+}
+
+const DEFAULT_MILESTONE_TRACK = 'project'
 
 // ------------------------------------------------------
 // ✅ HEADER avec scroll spy + animation fluide
@@ -135,18 +147,42 @@ function Skills() {
                             key={skill.name}
                             data-aos="zoom-in"
                             data-aos-delay={idx * 50}
-                            className="p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400"
+                            className="relative group p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400"
                         >
-                            <div className="flex justify-between items-center">
+                            <div className="flex justify-between items-center gap-3">
                                 <p className="font-semibold">{skill.name}</p>
-                                <span className="text-sm text-gray-500">{skill.level}%</span>
+                                <span className={`text-xs font-medium px-2 py-1 rounded-full ${SKILL_STATUS_STYLES[skill.status] || 'text-gray-700 bg-gray-100'}`}>
+                                    {skill.status}
+                                </span>
                             </div>
-                            <div className="mt-2 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                <div
-                                    className="h-full bg-indigo-500 rounded-full transition-[width] duration-700 ease-in-out"
-                                    style={{ width: `${skill.level}%` }}
-                                />
+                            <div className="mt-4 space-y-1">
+                                <p className="text-[10px] font-semibold text-gray-500 uppercase tracking-wide">Jalons</p>
+                                <div className="flex flex-wrap gap-1">
+                                    {(SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]).map((milestone, milestoneIndex) => {
+                                        const currentTrack = SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]
+                                        const currentStageIndex = currentTrack.indexOf(skill.stage)
+                                        const reached = currentStageIndex >= milestoneIndex && currentStageIndex !== -1
+                                        return (
+                                            <span
+                                                key={`${skill.name}-${milestone}`}
+                                                className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
+                                                    reached ? 'bg-indigo-600 text-white border-indigo-600' : 'text-gray-400 border-gray-200'
+                                                }`}
+                                            >
+                                                {milestone}
+                                            </span>
+                                        )
+                                    })}
+                                </div>
                             </div>
+                            {skill.description && (
+                                <div className="pointer-events-none absolute inset-x-0 -bottom-3 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
+                                    <div className="relative mx-auto max-w-xs rounded-lg border border-indigo-100 bg-white p-3 text-xs text-gray-600 shadow-lg">
+                                        <p className="mt-1 leading-relaxed">{skill.description}</p>
+                                        <span className="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rotate-45 border-t border-l border-indigo-100 bg-white" />
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
