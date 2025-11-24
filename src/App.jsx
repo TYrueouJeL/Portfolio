@@ -7,14 +7,31 @@ const CV = {
     name: 'RÉMI GUERIN',
     title: 'Étudiant en développement',
     age: '19 ans',
-    phone: '07 67 60 39 98',
     email: 'guerinremi.pro@gmail.com',
     address: '1 Voie des Roseaux, 53440 La Chapelle au Riboul',
-    profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites modernes et performer côté front-end.',
+    profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites webs, des logiciels et des jeux vidéos.',
     experiences: [
-        {date: '2024', place: 'Lely center Evron', desc: 'Deux mois au service informatique (préparation de PC).'},
-        {date: '2024', place: 'Relais Petite Enfance - Le manège des 7 lieux', desc: 'Création d’un site vitrine (8 avril / 7 juin).'},
-        {date: '2025', place: 'Ets KIRSCH', desc: 'Tests de développement d’une application mobile (15 janvier / 28 février).'}
+        {
+            date: '2024',
+            place: 'Lely center Evron',
+            desc: 'Deux mois au service informatique (préparation de PC).',
+            description: 'Réception, audit matériel et reconditionnement d’une flotte de postes pour les équipes techniques. J’ai créé des scripts d’automatisation pour accélérer les installations Windows et le déploiement applicatif.',
+            image: 'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=900&q=80'
+        },
+        {
+            date: '2024',
+            place: 'Relais Petite Enfance',
+            desc: 'Création d’un site vitrine (8 avril / 7 juin).',
+            description: 'Identification des besoins des éducateurs, prototypage figma puis développement complet du site vitrine (Nuxt + Tailwind). Livraison d’un back-office simplifié pour mettre à jour les événements.',
+            image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80'
+        },
+        {
+            date: '2025',
+            place: 'Ets KIRSCH',
+            desc: 'Tests de développement d’une application mobile.',
+            description: 'Participation au cadrage fonctionnel, rédaction de plans de tests et mise en place d’un pipeline CI pour fiabiliser les builds mobiles. J’ai aussi préparé une preuve de concept React Native pour la prochaine itération.',
+            image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80'
+        }
     ],
     education: [
         {date: '2020 - 2023', place: 'Lycée Réaumur Laval', desc: 'Bac STI2D option SIN'},
@@ -193,27 +210,70 @@ function Skills() {
 
 // ------------------------------------------------------
 function Experiences() {
+    const [openIndex, setOpenIndex] = useState(null)
+
+    function toggleExperience(index) {
+        setOpenIndex(prev => (prev === index ? null : index))
+    }
+
     return (
         <section className="py-20" id="experiences">
             <div className="max-w-5xl mx-auto px-6">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Expériences</h2>
                 <div className="mt-8 space-y-4">
-                    {CV.experiences.map((e, i) => (
-                        <article
-                            key={i}
-                            data-aos="fade-right"
-                            data-aos-delay={i * 100}
-                            className="p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400"
-                        >
-                            <div className="flex items-center justify-between">
-                                <div>
-                                    <p className="font-semibold">{e.place}</p>
-                                    <p className="text-sm text-gray-500">{e.date}</p>
+                    {CV.experiences.map((e, i) => {
+                        const expanded = openIndex === i
+                        return (
+                            <article
+                                key={i}
+                                data-aos="fade-right"
+                                data-aos-delay={i * 100}
+                                className="border rounded-lg bg-white shadow-sm overflow-hidden"
+                            >
+                                <button
+                                    type="button"
+                                    onClick={() => toggleExperience(i)}
+                                    className="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-indigo-50 transition-colors"
+                                >
+                                    <div>
+                                        <p className="font-semibold text-lg">{e.place}</p>
+                                        <p className="text-sm text-gray-500">{e.date}</p>
+                                    </div>
+                                    <div className="flex items-center gap-4">
+                                        <p className="text-sm text-gray-600 hidden sm:block">{e.desc}</p>
+                                        <span
+                                            className={`h-6 w-6 flex items-center justify-center rounded-full border border-indigo-200 text-indigo-600 transition-transform ${
+                                                expanded ? 'rotate-180' : ''
+                                            }`}
+                                        >
+                                            ▼
+                                        </span>
+                                    </div>
+                                </button>
+                                <div
+                                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                                        expanded ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                                    }`}
+                                >
+                                    <div className="overflow-hidden">
+                                        <div className="p-4 pt-0 sm:pt-4 flex flex-col gap-4 sm:flex-row">
+                                            {e.image && (
+                                                <img
+                                                    src={e.image}
+                                                    alt={`Illustration ${e.place}`}
+                                                    className="h-48 w-full sm:w-1/3 rounded-lg object-cover"
+                                                />
+                                            )}
+                                            <div className="flex-1">
+                                                <p className="text-sm text-gray-500 font-semibold uppercase tracking-wide">Missions</p>
+                                                <p className="mt-2 text-gray-700 leading-relaxed whitespace-pre-line">{e.description}</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p className="text-sm text-gray-600">{e.desc}</p>
-                            </div>
-                        </article>
-                    ))}
+                            </article>
+                        )
+                    })}
                 </div>
             </div>
         </section>
@@ -328,9 +388,8 @@ function Contact() {
             <div className="max-w-5xl mx-auto px-6 text-center">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Contact</h2>
                 <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600">Tu peux me contacter directement :</p>
-                <div className="mt-6 space-y-2">
-                    <p className="text-lg font-medium">📞 {CV.phone}</p>
-                    <p className="text-lg font-medium">📧 {CV.email}</p>
+                <div data-aos="fade-up" data-aos-delay="200" className="mt-6 space-y-2">
+                    <p data-aos="fade-up" data-aos-delay="300" className="text-lg font-medium">📧 {CV.email}</p>
                 </div>
             </div>
         </section>
