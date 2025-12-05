@@ -15,21 +15,21 @@ const CV = {
             date: '2024',
             place: 'Lely center Evron',
             desc: 'Deux mois au service informatique (préparation de PC).',
-            description: 'Réception, audit matériel et reconditionnement d’une flotte de postes pour les équipes techniques. J’ai créé des scripts d’automatisation pour accélérer les installations Windows et le déploiement applicatif.',
+            description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
             image: 'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=900&q=80'
         },
         {
             date: '2024',
             place: 'Relais Petite Enfance',
             desc: 'Création d’un site vitrine (8 avril / 7 juin).',
-            description: 'Identification des besoins des éducateurs, prototypage figma puis développement complet du site vitrine (Nuxt + Tailwind). Livraison d’un back-office simplifié pour mettre à jour les événements.',
+            description: 'Analyse du site existant, analyse des besoins, propositions de solutions et création d\'un nouveau site vitrine avec WordPress. Rédaction d\'une documentation utilisateur pour la prise en main et la maintenance du site.',
             image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80'
         },
         {
             date: '2025',
             place: 'Ets KIRSCH',
             desc: 'Tests de développement d’une application mobile.',
-            description: 'Participation au cadrage fonctionnel, rédaction de plans de tests et mise en place d’un pipeline CI pour fiabiliser les builds mobiles. J’ai aussi préparé une preuve de concept React Native pour la prochaine itération.',
+            description: 'Création de multiples prototypes fonctionnels d\'une application mobile avec .NET MAUI afin d\'une future étude comparative des technologies de développement mobile.',
             image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80'
         }
     ],
@@ -232,12 +232,12 @@ function Experiences() {
                                 key={i}
                                 data-aos="fade-right"
                                 data-aos-delay={i * 100}
-                                className="border rounded-lg bg-white shadow-sm overflow-hidden"
+                                className="border rounded-lg bg-white dark:bg-gray-800 dark:border-gray-700 shadow-sm overflow-hidden"
                             >
                                 <button
                                     type="button"
                                     onClick={() => toggleExperience(i)}
-                                    className="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-indigo-50 transition-colors"
+                                    className="w-full flex items-center justify-between gap-3 p-4 text-left hover:bg-indigo-50 transition-colors dark:hover:bg-gray-700"
                                 >
                                     <div>
                                         <p className="font-semibold text-lg">{e.place}</p>
@@ -361,7 +361,7 @@ function Projects() {
                                         alt={repo.name}
                                         className="w-full h-64 object-contain transition-transform duration-300 transform group-hover:scale-105"
                                     />
-                                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-50 transition-opacity duration-300">
                                         <h3 className="text-white text-2xl font-semibold">{repo.name}</h3>
                                     </div>
                                     <div className="p-4 text-center md:text-left">
@@ -391,9 +391,16 @@ function Contact() {
         <section className="py-20 bg-gradient-to-r from-white to-indigo-50 dark:from-gray-900 dark:to-gray-900" id="contact">
             <div className="max-w-5xl mx-auto px-6 text-center">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Contact</h2>
-                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">Tu peux me contacter directement :</p>
-                <div data-aos="fade-up" data-aos-delay="200" className="mt-6 space-y-2 fade-up">
-                    <p data-aos="fade-up" data-aos-delay="300" className="text-lg font-medium text-gray-800 dark:text-gray-100"> {CV.email}</p>
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">
+                    Intéressé·e par une collaboration, un stage ou une mission freelance ? Envoyez‑moi un email à <strong>{CV.email}</strong>.
+                </p>
+                <div data-aos="fade-up" data-aos-delay="200" className="mt-6 flex items-center justify-center gap-4">
+                    <a href={`mailto:${CV.email}`} className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">
+                        Envoyer un email
+                    </a>
+                    <a href="https://github.com/TYrueouJeL" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 transition-colors">
+                        Voir mon GitHub
+                    </a>
                 </div>
             </div>
         </section>
