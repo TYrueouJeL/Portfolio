@@ -12,13 +12,6 @@ const CV = {
     profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites webs, des logiciels et des jeux vidéos.',
     experiences: [
         {
-            date: 'Juillet / Août 2024',
-            place: 'Lely center Evron',
-            desc: 'Deux mois au service informatique (préparation de PC).',
-            description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
-            image: '/lelylogo.png'
-        },
-        {
             date: 'Avril / Mai 2024',
             place: 'Relais Petite Enfance',
             desc: 'Création d’un site vitrine.',
@@ -26,7 +19,14 @@ const CV = {
             image: '/rpe.png'
         },
         {
-            date: 'Janvier / Février 2025',
+            date: 'Juillet / Août 2024',
+            place: 'Lely center Evron',
+            desc: 'Deux mois au service informatique (préparation de PC).',
+            description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
+            image: '/lelylogo.png'
+        },
+        {
+            date: 'Janvier / 2025',
             place: 'Ets KIRSCH',
             desc: 'Tests de développement d’une application mobile.',
             description: 'Création de multiples prototypes fonctionnels d\'une application mobile avec .NET MAUI afin d\'une future étude comparative des technologies de développement mobile.',
