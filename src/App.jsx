@@ -16,21 +16,21 @@ const CV = {
             place: 'Lely center Evron',
             desc: 'Deux mois au service informatique (préparation de PC).',
             description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
-            image: 'https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=900&q=80'
+            image: '/lelylogo.png'
         },
         {
             date: '2024',
             place: 'Relais Petite Enfance',
             desc: 'Création d’un site vitrine (8 avril / 7 juin).',
             description: 'Analyse du site existant, analyse des besoins, propositions de solutions et création d\'un nouveau site vitrine avec WordPress. Rédaction d\'une documentation utilisateur pour la prise en main et la maintenance du site.',
-            image: 'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80'
+            image: '/rpe.png'
         },
         {
             date: '2025',
             place: 'Ets KIRSCH',
             desc: 'Tests de développement d’une application mobile.',
             description: 'Création de multiples prototypes fonctionnels d\'une application mobile avec .NET MAUI afin d\'une future étude comparative des technologies de développement mobile.',
-            image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80'
+            image: '/etskirsch.png'
         }
     ],
     education: [
@@ -134,7 +134,7 @@ function Hero() {
                     <p className="mt-3 text-indigo-600 font-medium">{CV.title} — {CV.age}</p>
                     <p className="mt-6 text-gray-700 dark:text-gray-300">{CV.profile}</p>
                     <div className="mt-6 flex gap-3">
-                        <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">Contacte-moi</a>
+                        <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">Me contacter</a>
                         <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 transition-colors">Voir mes compétences</a>
                     </div>
                 </div>
@@ -265,7 +265,7 @@ function Experiences() {
                                                 <img
                                                     src={e.image}
                                                     alt={`Illustration ${e.place}`}
-                                                    className="h-48 w-full sm:w-1/3 rounded-lg object-cover"
+                                                    className="h-48 w-full sm:w-1/3 rounded-lg object-contain"
                                                 />
                                             )}
                                             <div className="flex-1">
