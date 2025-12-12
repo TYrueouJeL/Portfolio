@@ -38,17 +38,17 @@ const CV = {
         {date: '2023 - 2025', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM (niveau BTS)'}
     ],
     skills: [
-        { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Stack front complet pour maquetter et livrer des interfaces responsive.' },
-        { name: 'Node.js', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Développement de APIs et scripts backend sur l’écosystème JavaScript.' },
-        { name: 'Adonis', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node plein stack utilisé pour structurer mes APIs.' },
-        { name: 'NuxtJS', status: 'En cours d’apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Meta-framework Vue pour générer des sites performants côté front.' },
-        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Création d’interfaces dynamiques, hooks personnalisés et optimisation des states.' },
-        { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Développement serveur classique et scripts métiers en PHP moderne.' },
-        { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Applications web structurées avec bundles, services et tests fonctionnels.' },
-        { name: 'SQL', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Modélisation de bases de données et requêtes optimisées (MySQL / PostgreSQL).' },
-        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Gestion de versions, code review et flux Git collaboratifs.' },
-        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Développement d’apps desktop / jeux avec .NET et Unity.' },
-        { name: 'Unity', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Prototypage de gameplay et intégration d’assets 2D/3D.' },
+        { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
+        { name: 'Node.js', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d’exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
+        { name: 'Adonis', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
+        { name: 'NuxtJS', status: 'En cours d’apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d’applications front performantes.' },
+        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d’interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
+        { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
+        { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Framework PHP complet et structuré reposant sur des composants modulaires, idéal pour créer des applications web maintenables et sécurisées.' },
+        { name: 'SQL', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage de gestion de bases de données relationnelles permettant de modéliser, interroger et optimiser les données.' },
+        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l’évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
+        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d’applications .NET, de jeux vidéo et d’outils multiplateformes.' },
+        { name: 'Unity', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d’outils.' },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
@@ -184,7 +184,7 @@ function Skills() {
                                         return (
                                             <span
                                                 key={`${skill.name}-${milestone}`}
-                                                className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
+                                                className={`px-2 py-0.5 text-[10px] font-medium cursor-default rounded-full border ${
                                                     reached
                                                         ? 'bg-indigo-600 text-white border-indigo-600'
                                                         : 'text-gray-400 border-gray-200 dark:text-gray-500 dark:border-gray-700'
@@ -197,10 +197,9 @@ function Skills() {
                                 </div>
                             </div>
                             {skill.description && (
-                                <div className="pointer-events-none absolute inset-x-0 -bottom-3 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
+                                <div className="pointer-events-none absolute inset-x-0 bottom-4 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
                                     <div className="relative mx-auto max-w-xs rounded-lg border border-indigo-100 bg-white dark:bg-gray-900 dark:border-gray-700 p-3 text-xs text-gray-600 dark:text-gray-300 shadow-lg">
                                         <p className="mt-1 leading-relaxed">{skill.description}</p>
-                                        <span className="absolute left-1/2 top-0 -translate-y-1/2 -translate-x-1/2 h-3 w-3 rotate-45 border-t border-l border-indigo-100 bg-white dark:bg-gray-900" />
                                     </div>
                                 </div>
                             )}
