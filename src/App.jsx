@@ -6,7 +6,7 @@ import 'aos/dist/aos.css'
 const CV = {
     name: 'RÉMI GUERIN',
     title: 'Étudiant en développement',
-    age: '19 ans',
+    dateDeNaissance: '21/12/2005',
     email: 'guerinremi.pro@gmail.com',
     address: '1 Voie des Roseaux, 53440 La Chapelle au Riboul',
     profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites webs, des logiciels et des jeux vidéos.',
@@ -126,12 +126,27 @@ function Header() {
 
 // ------------------------------------------------------
 function Hero() {
+    // Calcul de l'âge basé sur la date de naissance
+    const calculateAge = (birthDate) => {
+        const [day, month, year] = birthDate.split('/').map(Number)
+        const birth = new Date(year, month - 1, day)
+        const today = new Date()
+        let age = today.getFullYear() - birth.getFullYear()
+        const monthDiff = today.getMonth() - birth.getMonth()
+        if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+            age--
+        }
+        return age
+    }
+
+    const age = calculateAge(CV.dateDeNaissance)
+
     return (
         <section className="min-h-[70vh] flex items-center" id="home">
             <div className="max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 items-center">
                 <div data-aos="fade-right">
                     <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">{CV.name}</h1>
-                    <p className="mt-3 text-indigo-600 font-medium">{CV.title} — {CV.age}</p>
+                    <p className="mt-3 text-indigo-600 font-medium">{CV.title} — {age} ans</p>
                     <p className="mt-6 text-gray-700 dark:text-gray-300">{CV.profile}</p>
                     <div className="mt-6 flex gap-3">
                         <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">Me contacter</a>
