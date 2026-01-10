@@ -40,7 +40,7 @@ const CV = {
         // },
         {
             id: 'ets-kirsch',
-            date: 'Janvier / 2025',
+            date: 'Janvier / Février 2025',
             place: 'Ets KIRSCH',
             desc: 'Tests de développement d\'une application mobile.',
             description: 'Création de multiples prototypes fonctionnels d\'une application mobile avec .NET MAUI afin d\'une future étude comparative des technologies de développement mobile.',
