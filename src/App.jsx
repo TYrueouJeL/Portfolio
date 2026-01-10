@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useParams, useNavigate } from 'react-router-dom'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -12,25 +12,50 @@ const CV = {
     profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites webs, des logiciels et des jeux vidéos.',
     experiences: [
         {
+            id: 'rpe',
             date: 'Avril / Mai 2024',
             place: 'Relais Petite Enfance',
-            desc: 'Création d’un site vitrine.',
+            desc: 'Création d\'un site vitrine.',
             description: 'Analyse du site existant, analyse des besoins, propositions de solutions et création d\'un nouveau site vitrine avec WordPress. Rédaction d\'une documentation utilisateur pour la prise en main et la maintenance du site.',
-            image: '/rpe.png'
+            image: '/rpe.png',
+            detailedContent: 'Pendant cette mission de deux mois, j\'ai eu l\'opportunité de mener un projet complet de refonte web. Le Relais Petite Enfance, un établissement crucial pour les familles de la région, souhaitait moderniser sa présence en ligne.',
+            tasks: [
+                'Analyse approfondie du site existant et identification des faiblesses',
+                'Étude des besoins du client et de ses objectifs futurs',
+                'Proposition de plusieurs solutions avec argumentations',
+                'Développement du nouveau site vitrine avec WordPress',
+                'Intégration de plugins nécessaires pour la sécurité et les performances',
+                'Création d\'une documentation complète pour le client',
+                'Formation du personnel à la maintenance et gestion du contenu'
+            ],
+            technologies: ['WordPress'],
+            results: 'Le nouveau site a permis au Relais Petite Enfance de moderniser sa présence en ligne et de faciliter la navigation pour les parents. Le client est très satisfait de la documentation fournie qui lui permet de gérer de manière autonome le site.'
         },
+        // {
+        //     date: 'Juillet / Août 2024',
+        //     place: 'Lely center Evron',
+        //     desc: 'Deux mois au service informatique (préparation de PC).',
+        //     description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
+        //     image: '/lelylogo.png'
+        // },
         {
-            date: 'Juillet / Août 2024',
-            place: 'Lely center Evron',
-            desc: 'Deux mois au service informatique (préparation de PC).',
-            description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
-            image: '/lelylogo.png'
-        },
-        {
+            id: 'ets-kirsch',
             date: 'Janvier / 2025',
             place: 'Ets KIRSCH',
-            desc: 'Tests de développement d’une application mobile.',
+            desc: 'Tests de développement d\'une application mobile.',
             description: 'Création de multiples prototypes fonctionnels d\'une application mobile avec .NET MAUI afin d\'une future étude comparative des technologies de développement mobile.',
-            image: '/etskirsch.png'
+            image: '/etskirsch.png',
+            detailedContent: 'Chez Ets KIRSCH, j\'ai participé à un projet de migration de technologie d\'une application mobile. Mon rôle consistait à créer et tester des prototypes pour évaluer les différentes approches technologiques.',
+            tasks: [
+                'Étude comparative de plusieurs frameworks mobiles (React Native, Flutter, .NET MAUI)',
+                'Création de prototypes fonctionnels avec .NET MAUI',
+                'Tests exhaustifs des fonctionnalités implémentées',
+                'Documentation des résultats et apprentissages',
+                'Évaluation des performances et de l\'expérience utilisateur',
+                'Présentation des conclusions au client'
+            ],
+            technologies: ['.NET MAUI', 'C#', 'XAML', 'Visual Studio'],
+            results: 'Cette expérience m\'a permis d\'explorer le développement mobile et de contribuer à des conclusions stratégiques pour l\'entreprise concernant le choix technologique pour leurs futurs développements.'
         }
     ],
     education: [
@@ -105,7 +130,7 @@ function Header() {
                     {navItems.map(item => (
                         <a
                             key={item.id}
-                            href={`#${item.id}`}
+                            href={`/#${item.id}`}
                             className={`relative transition-all duration-300 
                                 ${activeSection === item.id 
                                     ? 'text-indigo-600 dark:text-indigo-400 font-semibold' 
@@ -150,7 +175,7 @@ function Hero() {
                     <p className="mt-6 text-gray-700 dark:text-gray-300">{CV.profile}</p>
                     <div className="mt-6 flex gap-3">
                         <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">Me contacter</a>
-                        <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 transition-colors">Voir mes compétences</a>
+                        <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 hover:bg-indigo-50 transition-colors">Voir mes compétences</a>
                     </div>
                 </div>
                 <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-lg shadow-lg dark:from-gray-800 dark:to-gray-900">
@@ -287,6 +312,9 @@ function Experiences() {
                                                 <p className="mt-2 text-gray-700 dark:text-gray-200 leading-relaxed whitespace-pre-line">{e.description}</p>
                                             </div>
                                         </div>
+                                        <div className="px-4 pb-4">
+                                            <Link to={`/experience/${e.id}`} className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 hover:bg-indigo-50 transition-colors">Plus de détails</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -412,7 +440,7 @@ function Contact() {
                     <a href={`mailto:${CV.email}`} className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">
                         Envoyer un email
                     </a>
-                    <a href="https://github.com/TYrueouJeL" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 transition-colors">
+                    <a href="https://github.com/TYrueouJeL" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 hover:bg-indigo-50 transition-colors">
                         Voir mon GitHub
                     </a>
                 </div>
@@ -424,7 +452,7 @@ function Contact() {
 // ------------------------------------------------------
 function Footer() {
     return (
-        <footer className="py-8 border-t mt-12 border-gray-200 dark:border-gray-800">
+        <footer className="py-8 border-t border-gray-200 dark:border-gray-800">
             <div className="max-w-5xl mx-auto px-6 text-center text-sm text-gray-500 dark:text-gray-400">
                 © {new Date().getFullYear()} Rémi Guerin — Portfolio
             </div>
@@ -432,7 +460,134 @@ function Footer() {
     )
 }
 
-// ------------------------------------------------------
+// PAGE DE DÉTAILS D'UNE EXPÉRIENCE
+function ExperienceDetail() {
+    const { id } = useParams()
+    const navigate = useNavigate()
+    const experience = CV.experiences.find(e => e.id === id)
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [id])
+
+    if (!experience) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center">
+                    <h1 className="text-3xl font-bold mb-4">Expérience non trouvée</h1>
+                    <Link to="/" className="text-indigo-600 hover:text-indigo-700">Retour à l'accueil</Link>
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className="min-h-screen bg-white dark:bg-gray-900">
+            <button
+                onClick={() => navigate(-1)}
+                className="fixed top-20 left-6 z-20 px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-colors"
+            >
+                ← Retour
+            </button>
+
+            <main className="pt-20">
+                <section className="py-20">
+                    <div className="max-w-4xl mx-auto px-6">
+                        {/* En-tête */}
+                        <div className="mb-12">
+                            <p className="text-indigo-600 font-semibold mb-2">{experience.date}</p>
+                            <h1 className="text-4xl md:text-5xl font-bold mb-4">{experience.place}</h1>
+                            <p className="text-xl text-gray-600 dark:text-gray-300">{experience.desc}</p>
+                        </div>
+
+                        {/* Image principale */}
+                        {experience.image && (
+                            <div className="mb-12">
+                                <img
+                                    src={experience.image}
+                                    alt={experience.place}
+                                    className="w-full h-96 rounded-lg object-contain shadow-lg"
+                                />
+                            </div>
+                        )}
+
+                        {/* Contenu détaillé */}
+                        <div className="prose dark:prose-invert max-w-none mb-12">
+                            <h2 className="text-2xl font-bold mb-4">À propos de cette expérience</h2>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                                {experience.detailedContent}
+                            </p>
+                        </div>
+
+                        {/* Tâches principales */}
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6">Tâches principales</h2>
+                            <ul className="space-y-3">
+                                {experience.tasks.map((task, idx) => (
+                                    <li key={idx} className="flex gap-4">
+                                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-indigo-100 dark:bg-indigo-900 flex items-center justify-center">
+                                            <span className="text-indigo-600 dark:text-indigo-300 text-sm font-semibold">{idx + 1}</span>
+                                        </span>
+                                        <span className="text-gray-700 dark:text-gray-300">{task}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Technologies utilisées */}
+                        <div className="mb-12">
+                            <h2 className="text-2xl font-bold mb-6">Technologies utilisées</h2>
+                            <div className="flex flex-wrap gap-3">
+                                {experience.technologies.map((tech, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="px-4 py-2 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-lg font-medium"
+                                    >
+                                        {tech}
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Résultats */}
+                        <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+                            <h2 className="text-2xl font-bold mb-4">Résultats et apprentissages</h2>
+                            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                {experience.results}
+                            </p>
+                        </div>
+
+                        {/* Lien pour retourner */}
+                        <div className="mt-12 text-center">
+                            <Link to="/#experiences" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
+                                Voir toutes les expériences
+                            </Link>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    )
+}
+
+// Page d'accueil principale
+function HomePage() {
+    return (
+        <div className="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+            <Header />
+            <main className="pt-24">
+                <Hero />
+                <Skills />
+                <Experiences />
+                <Projects />
+                <Contact />
+            </main>
+            <Footer />
+        </div>
+    )
+}
+
+// APP PRINCIPALE AVEC ROUTING
 export default function PortfolioApp() {
     useEffect(() => {
         AOS.init({ duration: 800, once: true })
@@ -440,17 +595,16 @@ export default function PortfolioApp() {
 
     return (
         <Router>
-            <div className="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
-                <Header />
-                <main className="pt-24">
-                    <Hero />
-                    <Skills />
-                    <Experiences />
-                    <Projects />
-                    <Contact />
-                </main>
-                <Footer />
-            </div>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/experience/:id" element={
+                    <div className="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+                        <Header />
+                        <ExperienceDetail />
+                        <Footer />
+                    </div>
+                } />
+            </Routes>
         </Router>
     )
 }
