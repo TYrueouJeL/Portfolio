@@ -449,17 +449,6 @@ function Contact() {
     )
 }
 
-// ------------------------------------------------------
-function Footer() {
-    return (
-        <footer className="py-8 border-t border-gray-200 dark:border-gray-800">
-            <div className="max-w-5xl mx-auto px-6 text-center text-sm text-gray-500 dark:text-gray-400">
-                © {new Date().getFullYear()} Rémi Guerin — Portfolio
-            </div>
-        </footer>
-    )
-}
-
 // PAGE DE DÉTAILS D'UNE EXPÉRIENCE
 function ExperienceDetail() {
     const { id } = useParams()
@@ -582,7 +571,6 @@ function HomePage() {
                 <Projects />
                 <Contact />
             </main>
-            <Footer />
         </div>
     )
 }
@@ -601,7 +589,6 @@ export default function PortfolioApp() {
                     <div className="min-h-screen bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
                         <Header />
                         <ExperienceDetail />
-                        <Footer />
                     </div>
                 } />
             </Routes>
