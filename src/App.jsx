@@ -64,8 +64,8 @@ const CV = {
     ],
     skills: [
         { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
-        { name: 'Node.js', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d’exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
-        { name: 'Adonis', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
+        { name: 'Node.js', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d’exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
+        { name: 'Adonis', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
         { name: 'NuxtJS', status: 'En cours d’apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d’applications front performantes.' },
         { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d’interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
         { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
