@@ -8,8 +8,7 @@ const CV = {
     title: 'Étudiant en développement',
     dateDeNaissance: '21/12/2005',
     email: 'guerinremi.pro@gmail.com',
-    address: '1 Voie des Roseaux, 53440 La Chapelle au Riboul',
-    profile: 'Étudiant en développement web, curieux et autonome. J’aime concevoir des sites webs, des logiciels et des jeux vidéos.',
+    profile: 'Étudiant en développement web, curieux et autonome. J\'aime concevoir des sites webs, des logiciels et des jeux vidéos.',
     experiences: [
         {
             id: 'rpe',
@@ -31,13 +30,6 @@ const CV = {
             technologies: ['WordPress'],
             results: 'Le nouveau site a permis au Relais Petite Enfance de moderniser sa présence en ligne et de faciliter la navigation pour les parents. Le client est très satisfait de la documentation fournie qui lui permet de gérer de manière autonome le site.'
         },
-        // {
-        //     date: 'Juillet / Août 2024',
-        //     place: 'Lely center Evron',
-        //     desc: 'Deux mois au service informatique (préparation de PC).',
-        //     description: 'Préparation de PC clients (clonage d\'une image Windows personnalisée, tests de bon fonctionnement), tri et inventaire d\'un stock de PC.',
-        //     image: '/lelylogo.png'
-        // },
         {
             id: 'ets-kirsch',
             date: 'Janvier / Février 2025',
@@ -64,23 +56,23 @@ const CV = {
     ],
     skills: [
         { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
-        { name: 'Node.js', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d’exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
+        { name: 'Node.js', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d\'exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
         { name: 'Adonis', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
-        { name: 'NuxtJS', status: 'En cours d’apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d’applications front performantes.' },
-        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d’interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
+        { name: 'NuxtJS', status: 'En cours d\'apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d\'applications front performantes.' },
+        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d\'interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
         { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
         { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Framework PHP complet et structuré reposant sur des composants modulaires, idéal pour créer des applications web maintenables et sécurisées.' },
         { name: 'SQL', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage de gestion de bases de données relationnelles permettant de modéliser, interroger et optimiser les données.' },
-        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l’évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
-        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d’applications .NET, de jeux vidéo et d’outils multiplateformes.' },
-        { name: 'Unity', status: 'En cours d’apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d’outils.' },
+        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l\'évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
+        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d\'applications .NET, de jeux vidéo et d\'outils multiplateformes.' },
+        { name: 'Unity', status: 'En cours d\'apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d\'outils.' },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
 
 const SKILL_STATUS_STYLES = {
     'Maîtrisé': 'text-emerald-700 bg-emerald-100',
-    'En cours d’apprentissage': 'text-amber-700 bg-amber-100',
+    'En cours d\'apprentissage': 'text-amber-700 bg-amber-100',
 }
 
 const SKILL_MILESTONES = {
@@ -151,7 +143,6 @@ function Header() {
 
 // ------------------------------------------------------
 function Hero() {
-    // Calcul de l'âge basé sur la date de naissance
     const calculateAge = (birthDate) => {
         const [day, month, year] = birthDate.split('/').map(Number)
         const birth = new Date(year, month - 1, day)
@@ -167,7 +158,7 @@ function Hero() {
     const age = calculateAge(CV.dateDeNaissance)
 
     return (
-        <section className="min-h-[70vh] flex items-center" id="home">
+        <section className="min-h-screen flex items-center" id="home">
             <div className="max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 items-center">
                 <div data-aos="fade-right">
                     <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">{CV.name}</h1>
@@ -196,10 +187,10 @@ function Hero() {
 // ------------------------------------------------------
 function Skills() {
     return (
-        <section className="py-20 bg-gray-50 dark:bg-transparent" id="competences">
-            <div className="max-w-5xl mx-auto px-6">
+        <section className="min-h-screen flex flex-col justify-center bg-gray-50 dark:bg-transparent" id="competences">
+            <div className="max-w-5xl mx-auto px-6 py-24 w-full">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Compétences</h2>
-                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600">Langages et frameworks avec lesquels j’ai déjà travaillé.</p>
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600">Langages et frameworks avec lesquels j'ai déjà travaillé.</p>
                 <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {CV.skills.map((skill, idx) => (
                         <div
@@ -260,8 +251,8 @@ function Experiences() {
     }
 
     return (
-        <section className="py-20" id="experiences">
-            <div className="max-w-5xl mx-auto px-6">
+        <section className="min-h-screen flex flex-col justify-center" id="experiences">
+            <div className="max-w-5xl mx-auto px-6 py-24 w-full">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Expériences</h2>
                 <div className="mt-8 space-y-4">
                     {CV.experiences.map((e, i) => {
@@ -336,10 +327,14 @@ function Projects() {
             try {
                 const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos`, {
                     headers: {
-                        Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`, // ou process.env.REACT_APP_GITHUB_TOKEN
+                        Authorization: `token ${import.meta.env.VITE_GITHUB_TOKEN}`,
                     },
                 })
                 const data = await res.json()
+                if (!Array.isArray(data)) {
+                    console.error('Response Github inattendue :', data)
+                    return
+                }
                 const filtered = data.filter(repo => !repo.fork && repo.description)
 
                 const reposWithDetails = await Promise.all(
@@ -388,15 +383,15 @@ function Projects() {
     }
 
     return (
-        <section id="projects" className="py-16 bg-white dark:bg-gray-900">
-            <div className="max-w-5xl mx-auto px-4">
+        <section id="projects" className="min-h-screen flex flex-col justify-center bg-white dark:bg-gray-900">
+            <div className="max-w-5xl mx-auto px-4 py-24 w-full">
                 <h2 className="text-3xl font-semibold mb-6 text-center">Mes Projets</h2>
                 {repos.length === 0 ? (
                     <p className="text-center text-gray-500">Chargement des projets GitHub...</p>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                        {repos.map(repo => (
-                            <div key={repo.id} data-aos="fade-up" className="relative overflow-hidden rounded-lg shadow-lg group bg-white dark:bg-gray-800">
+                        {repos.map((repo, idx) => (
+                            <div key={repo.id} data-aos="fade-up" data-aos-delay={idx * 100} className="relative overflow-hidden rounded-lg shadow-lg group bg-white dark:bg-gray-800">
                                 <a href={repo.html_url} target="_blank" rel="noopener noreferrer">
                                     <img
                                         src={repo.presentationImageUrl || `https://via.placeholder.com/600x300?text=${repo.name}`}
@@ -430,7 +425,7 @@ function Projects() {
 // ------------------------------------------------------
 function Contact() {
     return (
-        <section className="py-20 bg-gradient-to-r from-white to-indigo-50 dark:from-gray-900 dark:to-gray-900" id="contact">
+        <section className="min-h-screen flex flex-col justify-center bg-gradient-to-r from-white to-indigo-50 dark:from-gray-900 dark:to-gray-900" id="contact">
             <div className="max-w-5xl mx-auto px-6 text-center">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Contact</h2>
                 <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">
@@ -482,14 +477,12 @@ function ExperienceDetail() {
             <main className="pt-20">
                 <section className="py-20">
                     <div className="max-w-4xl mx-auto px-6">
-                        {/* En-tête */}
                         <div className="mb-12">
                             <p className="text-indigo-600 font-semibold mb-2">{experience.date}</p>
                             <h1 className="text-4xl md:text-5xl font-bold mb-4">{experience.place}</h1>
                             <p className="text-xl text-gray-600 dark:text-gray-300">{experience.desc}</p>
                         </div>
 
-                        {/* Image principale */}
                         {experience.image && (
                             <div className="mb-12">
                                 <img
@@ -500,7 +493,6 @@ function ExperienceDetail() {
                             </div>
                         )}
 
-                        {/* Contenu détaillé */}
                         <div className="prose dark:prose-invert max-w-none mb-12">
                             <h2 className="text-2xl font-bold mb-4">À propos de cette expérience</h2>
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
@@ -508,7 +500,6 @@ function ExperienceDetail() {
                             </p>
                         </div>
 
-                        {/* Tâches principales */}
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold mb-6">Tâches principales</h2>
                             <ul className="space-y-3">
@@ -523,7 +514,6 @@ function ExperienceDetail() {
                             </ul>
                         </div>
 
-                        {/* Technologies utilisées */}
                         <div className="mb-12">
                             <h2 className="text-2xl font-bold mb-6">Technologies utilisées</h2>
                             <div className="flex flex-wrap gap-3">
@@ -538,7 +528,6 @@ function ExperienceDetail() {
                             </div>
                         </div>
 
-                        {/* Résultats */}
                         <div className="p-6 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
                             <h2 className="text-2xl font-bold mb-4">Résultats et apprentissages</h2>
                             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -546,7 +535,6 @@ function ExperienceDetail() {
                             </p>
                         </div>
 
-                        {/* Lien pour retourner */}
                         <div className="mt-12 text-center">
                             <Link to="/#experiences" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors">
                                 Voir toutes les expériences
