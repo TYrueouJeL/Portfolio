@@ -48,11 +48,30 @@ const CV = {
             ],
             technologies: ['.NET MAUI', 'C#', 'XAML', 'Visual Studio'],
             results: 'Cette expérience m\'a permis d\'explorer le développement mobile et de contribuer à des conclusions stratégiques pour l\'entreprise concernant le choix technologique pour leurs futurs développements.'
+        },
+        {
+            id: 'alternatri',
+            date: 'Janvier / Février 2026',
+            place: 'Alternatri',
+            desc: 'Développement d\'un site web interne.',
+            description: 'Développement d\'un site web interne pour la gestion des appels et des plannings des équipes. Lors de ce projet j\'ai eu le rôle de chef de projet. J\'ai organisé les différentes étapes du projet, réparti les tâches entre les membres de l\'équipe et assuré la communication avec le client pour garantir que le projet répondait à ses besoins.',
+            image: '/alternatri.png',
+            detailedContent: 'Chez Alternatri, j\'ai eu l\'opportunité de diriger un projet de développement web interne. Ce projet visait à créer une application de gestion des appels et des plannings pour améliorer l\'efficacité opérationnelle de l\'entreprise.',
+            tasks: [
+                'Intégration au sein de l\'équipe de développement et compréhension des besoins du client',
+                'Analyse de l\'existant',
+                'Réorganisation de la base de données',
+                'Développement de nouvelles fonctionnalités pour la gestion des appels et des plannings',
+                'Rendez-vous réguliers avec le client pour présenter l\'avancement et ajuster les fonctionnalités selon les retours',
+                'Rédaction de la documentation technique et utilisateur'
+            ],
+            technologies: ['PHP', 'SQL', 'Symfony', 'Twig', 'Git'],
+            results: 'Cette expérience m\'a permis de développer mes compétences en gestion de projet et en développement web, tout en contribuant à l\'amélioration des processus internes de l\'entreprise.'
         }
     ],
     education: [
         {date: '2020 - 2023', place: 'Lycée Réaumur Laval', desc: 'Bac STI2D option SIN'},
-        {date: '2023 - 2025', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM (niveau BTS)'}
+        {date: '2023 - 2026', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM'}
     ],
     skills: [
         { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
