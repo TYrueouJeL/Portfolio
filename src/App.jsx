@@ -41,10 +41,7 @@ const CV = {
             tasks: [
                 'Étude comparative de plusieurs frameworks mobiles (React Native, Flutter, .NET MAUI)',
                 'Création de prototypes fonctionnels avec .NET MAUI',
-                'Tests exhaustifs des fonctionnalités implémentées',
-                'Documentation des résultats et apprentissages',
-                'Évaluation des performances et de l\'expérience utilisateur',
-                'Présentation des conclusions au client'
+                'Documentation des résultats',
             ],
             technologies: ['.NET MAUI', 'C#', 'XAML', 'Visual Studio'],
             results: 'Cette expérience m\'a permis d\'explorer le développement mobile et de contribuer à des conclusions stratégiques pour l\'entreprise concernant le choix technologique pour leurs futurs développements.'
@@ -77,7 +74,7 @@ const CV = {
         { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
         { name: 'Node.js', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d\'exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
         { name: 'Adonis', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
-        { name: 'NuxtJS', status: 'En cours d\'apprentissage', stage: 'Hello World', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d\'applications front performantes.' },
+        { name: 'NuxtJS', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d\'applications front performantes.' },
         { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d\'interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
         { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
         { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Framework PHP complet et structuré reposant sur des composants modulaires, idéal pour créer des applications web maintenables et sécurisées.' },
@@ -85,6 +82,112 @@ const CV = {
         { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l\'évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
         { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d\'applications .NET, de jeux vidéo et d\'outils multiplateformes.' },
         { name: 'Unity', status: 'En cours d\'apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d\'outils.' },
+    ],
+    technologyWatch: [
+        {
+            topic: 'DevOps & Cloud',
+            summary: 'Veille sur les pratiques d\'industrialisation logicielle, la conteneurisation et la gestion d\'infrastructure moderne.',
+            sections: [
+                {
+                    title: 'CI/CD et GitOps',
+                    content: 'Le CI/CD automatise les tests, la validation et le déploiement à chaque évolution du code. Le GitOps fait de Git la source de vérité unique pour l\'infrastructure.',
+                    highlights: [
+                        'CI: build + tests automatiques à chaque push',
+                        'CD: livraison ou déploiement automatisé vers staging/production',
+                        'GitOps: changements infra via Pull Request, synchronisation avec ArgoCD/Flux',
+                        'Bénéfices: traçabilité, rollback rapide, collaboration renforcée',
+                    ],
+                },
+                {
+                    title: 'Conteneurisation: Docker et Kubernetes',
+                    content: 'Docker encapsule l\'application et ses dépendances dans un environnement portable. Kubernetes orchestre les conteneurs à grande échelle.',
+                    highlights: [
+                        'Docker: environnements reproductibles et portables',
+                        'Docker Compose: orchestration locale multi-services (app, db, cache)',
+                        'Kubernetes: autoscaling, self-healing, load balancing, rolling updates',
+                        'Standard cloud-native pour les applications distribuées',
+                    ],
+                },
+                {
+                    title: 'Edge Computing vs Cloud Computing',
+                    content: 'Le cloud centralise le calcul dans des datacenters, tandis que l\'edge rapproche l\'exécution de l\'utilisateur ou de la source de données.',
+                    highlights: [
+                        'Cloud: forte scalabilité mais latence potentielle',
+                        'Edge: traitements temps réel au plus près du besoin',
+                        'Cas d\'usage: IoT industriel, vidéo intelligente, véhicules autonomes',
+                        'Web moderne: Cloudflare Workers et Vercel Edge',
+                    ],
+                },
+                {
+                    title: 'Infrastructure as Code (IaC)',
+                    content: 'L\'infrastructure est décrite sous forme de code versionné plutôt que configurée manuellement dans des interfaces.',
+                    highlights: [
+                        'Terraform: référence multi-cloud pour provisionner',
+                        'Ansible: automatisation de configuration',
+                        'Pulumi: IaC avec TypeScript/Python',
+                        'Avantages: cohérence, auditabilité, répétabilité',
+                    ],
+                },
+            ],
+            sources: [
+                { name: 'GitHub Actions Docs', link: 'https://docs.github.com/en/actions' },
+                { name: 'Argo CD', link: 'https://argo-cd.readthedocs.io/' },
+                { name: 'Docker Docs', link: 'https://docs.docker.com/' },
+                { name: 'Kubernetes Docs', link: 'https://kubernetes.io/docs/home/' },
+                { name: 'Terraform Docs', link: 'https://developer.hashicorp.com/terraform/docs' },
+            ],
+        },
+        {
+            topic: 'Développement & Architecture',
+            summary: 'Veille sur les frameworks modernes, les choix d\'architecture applicative et les nouveaux paradigmes d\'exécution.',
+            sections: [
+                {
+                    title: 'Frameworks JavaScript modernes',
+                    content: 'Le frontend évolue vers des frameworks full-stack et orientés performance, avec un retour fort du rendu côté serveur.',
+                    highlights: [
+                        'Next.js / Nuxt 3: SSR/SSG et approche full-stack',
+                        'SvelteKit: compilation sans Virtual DOM',
+                        'Astro: islands architecture, peu de JavaScript envoyé',
+                        'Remix: usage fort des standards web',
+                    ],
+                },
+                {
+                    title: 'Microservices vs Monolithique',
+                    content: 'Le monolithe reste simple à opérer, les microservices offrent plus d\'indépendance mais avec une complexité réseau et infra accrue.',
+                    highlights: [
+                        'Monolithe: simple au démarrage, déploiement unique',
+                        'Microservices: scalabilité ciblée, déploiements indépendants',
+                        'Compromis actuel: modular monolith pour séparer sans surcomplexifier',
+                    ],
+                },
+                {
+                    title: 'Low-code / No-code',
+                    content: 'Ces plateformes accélèrent la création d\'outils métiers simples et déplacent le rôle du développeur vers l\'architecture et les cas complexes.',
+                    highlights: [
+                        'No-code: Bubble, Webflow, Glide',
+                        'Low-code: OutSystems, Mendix, PowerApps',
+                        'Automatisation: n8n, Make, Zapier',
+                        'Risques: lock-in, limites techniques, sécurité',
+                    ],
+                },
+                {
+                    title: 'WebAssembly (WASM)',
+                    content: 'WASM permet d\'exécuter du code proche des performances natives dans le navigateur et, via WASI, côté serveur.',
+                    highlights: [
+                        'Compilation depuis C/C++/Rust/Go vers le web',
+                        'Cas concrets: rendu graphique, jeux, traitement média',
+                        'Portabilité forte pour l\'edge et les runtimes modernes',
+                    ],
+                },
+            ],
+            sources: [
+                { name: 'React Blog', link: 'https://react.dev/blog' },
+                { name: 'Node.js', link: 'https://nodejs.org/en/blog' },
+                { name: 'State of JS', link: 'https://stateofjs.com/' },
+                { name: 'WebAssembly', link: 'https://webassembly.org/' },
+                { name: 'Astro Docs', link: 'https://docs.astro.build/' },
+            ],
+        },
     ],
     interests: ['Développement', 'Jeux vidéos', 'Réseaux sociaux']
 }
@@ -128,6 +231,7 @@ function Header() {
         { id: 'competences', label: 'Compétences' },
         { id: 'experiences', label: 'Expériences' },
         { id: 'projects', label: 'Projets' },
+        { id: 'veille-technologique', label: 'Veille technologique' },
         { id: 'contact', label: 'Contact' }
     ]
 
@@ -330,6 +434,63 @@ function Experiences() {
                             </article>
                         )
                     })}
+                </div>
+            </div>
+        </section>
+    )
+}
+
+// ------------------------------------------------------
+function TechnologyWatch() {
+    return (
+        <section className="min-h-screen flex flex-col justify-center bg-gray-50 dark:bg-transparent" id="veille-technologique">
+            <div className="max-w-5xl mx-auto px-6 py-24 w-full">
+                <h2 data-aos="fade-up" className="text-3xl font-bold">Veille technologique</h2>
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">
+                    Sujets que je suis régulièrement pour rester à jour sur les tendances et les bonnes pratiques du développement.
+                </p>
+                <div className="mt-8 grid md:grid-cols-3 gap-4">
+                    {CV.technologyWatch.map((item, idx) => (
+                        <article
+                            key={item.topic}
+                            data-aos="fade-up"
+                            data-aos-delay={idx * 100}
+                            className="p-5 border rounded-lg bg-white shadow-sm dark:bg-gray-800 dark:border-gray-700 md:col-span-3"
+                        >
+                            <h3 className="font-semibold text-lg">{item.topic}</h3>
+                            <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{item.summary}</p>
+                            {item.sections?.length > 0 && (
+                                <div className="mt-5 grid gap-4 md:grid-cols-2">
+                                    {item.sections.map((section) => (
+                                        <div key={`${item.topic}-${section.title}`} className="rounded-lg border border-gray-200 dark:border-gray-700 p-4">
+                                            <h4 className="font-semibold text-base">{section.title}</h4>
+                                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{section.content}</p>
+                                            <ul className="mt-3 space-y-1">
+                                                {section.highlights.map((point) => (
+                                                    <li key={`${section.title}-${point}`} className="text-sm text-gray-700 dark:text-gray-200">
+                                                        • {point}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                            <div className="mt-4 flex flex-wrap gap-2">
+                                {item.sources.map((source) => (
+                                    <a
+                                        key={`${item.topic}-${source.name}`}
+                                        href={source.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-3 py-1 text-xs bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-200 transition-colors"
+                                    >
+                                        {source.name}
+                                    </a>
+                                ))}
+                            </div>
+                        </article>
+                    ))}
                 </div>
             </div>
         </section>
@@ -576,6 +737,7 @@ function HomePage() {
                 <Skills />
                 <Experiences />
                 <Projects />
+                <TechnologyWatch />
                 <Contact />
             </main>
         </div>
