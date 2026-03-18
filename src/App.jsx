@@ -85,107 +85,89 @@ const CV = {
     ],
     technologyWatch: [
         {
-            topic: 'DevOps & Cloud',
-            summary: 'Veille sur les pratiques d\'industrialisation logicielle, la conteneurisation et la gestion d\'infrastructure moderne.',
-            sections: [
-                {
-                    title: 'CI/CD et GitOps',
-                    content: 'Le CI/CD automatise les tests, la validation et le déploiement à chaque évolution du code. Le GitOps fait de Git la source de vérité unique pour l\'infrastructure.',
-                    highlights: [
-                        'CI: build + tests automatiques à chaque push',
-                        'CD: livraison ou déploiement automatisé vers staging/production',
-                        'GitOps: changements infra via Pull Request, synchronisation avec ArgoCD/Flux',
-                        'Bénéfices: traçabilité, rollback rapide, collaboration renforcée',
-                    ],
-                },
-                {
-                    title: 'Conteneurisation: Docker et Kubernetes',
-                    content: 'Docker encapsule l\'application et ses dépendances dans un environnement portable. Kubernetes orchestre les conteneurs à grande échelle.',
-                    highlights: [
-                        'Docker: environnements reproductibles et portables',
-                        'Docker Compose: orchestration locale multi-services (app, db, cache)',
-                        'Kubernetes: autoscaling, self-healing, load balancing, rolling updates',
-                        'Standard cloud-native pour les applications distribuées',
-                    ],
-                },
-                {
-                    title: 'Edge Computing vs Cloud Computing',
-                    content: 'Le cloud centralise le calcul dans des datacenters, tandis que l\'edge rapproche l\'exécution de l\'utilisateur ou de la source de données.',
-                    highlights: [
-                        'Cloud: forte scalabilité mais latence potentielle',
-                        'Edge: traitements temps réel au plus près du besoin',
-                        'Cas d\'usage: IoT industriel, vidéo intelligente, véhicules autonomes',
-                        'Web moderne: Cloudflare Workers et Vercel Edge',
-                    ],
-                },
-                {
-                    title: 'Infrastructure as Code (IaC)',
-                    content: 'L\'infrastructure est décrite sous forme de code versionné plutôt que configurée manuellement dans des interfaces.',
-                    highlights: [
-                        'Terraform: référence multi-cloud pour provisionner',
-                        'Ansible: automatisation de configuration',
-                        'Pulumi: IaC avec TypeScript/Python',
-                        'Avantages: cohérence, auditabilité, répétabilité',
-                    ],
-                },
-            ],
+            topic: 'YouTube',
+            summary: 'Je m\'appuie sur plusieurs chaines pour suivre des contenus pedagogiques, des analyses tech et des retours d\'experience concrets.',
+            sections: [],
             sources: [
-                { name: 'GitHub Actions Docs', link: 'https://docs.github.com/en/actions' },
-                { name: 'Argo CD', link: 'https://argo-cd.readthedocs.io/' },
-                { name: 'Docker Docs', link: 'https://docs.docker.com/' },
-                { name: 'Kubernetes Docs', link: 'https://kubernetes.io/docs/home/' },
-                { name: 'Terraform Docs', link: 'https://developer.hashicorp.com/terraform/docs' },
+                {
+                    name: 'Benjamin Code',
+                    link: 'https://www.youtube.com/@BenjaminCode',
+                    description: 'Contenus pedagogiques sur le developpement web, JavaScript, architecture frontend et bonnes pratiques de conception.',
+                },
+                {
+                    name: '_Underscore',
+                    link: 'https://www.youtube.com/@_Underscore',
+                    description: 'Analyses tech sur l\'ecosysteme web, retours d\'experience et decryptages des tendances du developpement.',
+                },
+                {
+                    name: 'Micode',
+                    link: 'https://www.youtube.com/@Micode',
+                    description: 'Videos autour de l\'informatique, de la securite, de l\'IA et des enjeux techniques actuels dans le numerique.',
+                },
+                {
+                    name: 'Coding with Lewis',
+                    link: 'https://www.youtube.com/@CodingWithLewis',
+                    description: 'Approche pratique du code avec des formats projet, des conseils de progression et des sujets orientes developpeurs.',
+                },
+                {
+                    name: 'Cocadmin',
+                    link: 'https://www.youtube.com/@cocadmin',
+                    description: 'Contenus orientes admin systeme, infrastructure, outils dev et automatisation utiles en environnement pro.',
+                },
             ],
         },
         {
-            topic: 'Développement & Architecture',
-            summary: 'Veille sur les frameworks modernes, les choix d\'architecture applicative et les nouveaux paradigmes d\'exécution.',
-            sections: [
+            topic: 'Feedly',
+            summary: 'J\'utilise mon compte Feedly pour centraliser les actus dev, notamment autour de Vue, Nuxt et d\'autres ecosystemes frontend/backend.',
+            sections: [],
+            sources: [
                 {
-                    title: 'Frameworks JavaScript modernes',
-                    content: 'Le frontend évolue vers des frameworks full-stack et orientés performance, avec un retour fort du rendu côté serveur.',
-                    highlights: [
-                        'Next.js / Nuxt 3: SSR/SSG et approche full-stack',
-                        'SvelteKit: compilation sans Virtual DOM',
-                        'Astro: islands architecture, peu de JavaScript envoyé',
-                        'Remix: usage fort des standards web',
-                    ],
+                    name: 'Vue.js Blog',
+                    link: 'https://blog.vuejs.org/',
+                    description: 'Actualites du framework Vue, annonces de versions et bonnes pratiques recommandees par l\'equipe officielle.',
                 },
                 {
-                    title: 'Microservices vs Monolithique',
-                    content: 'Le monolithe reste simple à opérer, les microservices offrent plus d\'indépendance mais avec une complexité réseau et infra accrue.',
-                    highlights: [
-                        'Monolithe: simple au démarrage, déploiement unique',
-                        'Microservices: scalabilité ciblée, déploiements indépendants',
-                        'Compromis actuel: modular monolith pour séparer sans surcomplexifier',
-                    ],
+                    name: 'Nuxt Blog',
+                    link: 'https://nuxt.com/blog',
+                    description: 'Nouveautes Nuxt, evolutions du framework, conseils SSR/SSG et strategie de migration des projets.',
                 },
                 {
-                    title: 'Low-code / No-code',
-                    content: 'Ces plateformes accélèrent la création d\'outils métiers simples et déplacent le rôle du développeur vers l\'architecture et les cas complexes.',
-                    highlights: [
-                        'No-code: Bubble, Webflow, Glide',
-                        'Low-code: OutSystems, Mendix, PowerApps',
-                        'Automatisation: n8n, Make, Zapier',
-                        'Risques: lock-in, limites techniques, sécurité',
-                    ],
+                    name: 'Symfony Blog',
+                    link: 'https://symfony.com/blog/',
+                    description: 'Veille backend sur Symfony avec notes de release, securite, performances et ecosysteme PHP.',
                 },
                 {
-                    title: 'WebAssembly (WASM)',
-                    content: 'WASM permet d\'exécuter du code proche des performances natives dans le navigateur et, via WASI, côté serveur.',
-                    highlights: [
-                        'Compilation depuis C/C++/Rust/Go vers le web',
-                        'Cas concrets: rendu graphique, jeux, traitement média',
-                        'Portabilité forte pour l\'edge et les runtimes modernes',
-                    ],
+                    name: 'Node.js Blog',
+                    link: 'https://nodejs.org/en/blog',
+                    description: 'Suivi des evolutions Node.js, changements majeurs et informations utiles pour les projets JavaScript cote serveur.',
                 },
             ],
+        },
+        {
+            topic: 'Twitter / X',
+            summary: 'Je complete ma veille avec Twitter/X pour suivre les annonces rapides, les discussions techniques et les tendances dev.',
+            sections: [],
             sources: [
-                { name: 'React Blog', link: 'https://react.dev/blog' },
-                { name: 'Node.js', link: 'https://nodejs.org/en/blog' },
-                { name: 'State of JS', link: 'https://stateofjs.com/' },
-                { name: 'WebAssembly', link: 'https://webassembly.org/' },
-                { name: 'Astro Docs', link: 'https://docs.astro.build/' },
+                {
+                    name: 'Vue.js',
+                    link: 'https://x.com/vuejs',
+                    description: 'Compte officiel Vue pour les annonces importantes, ressources et sorties de versions.',
+                },
+                {
+                    name: 'Nuxt',
+                    link: 'https://x.com/nuxt_js',
+                    description: 'Actualites de l\'ecosysteme Nuxt, partage de releases, tips techniques et contenus de la communaute.',
+                },
+                {
+                    name: 'Symfony',
+                    link: 'https://x.com/symfony',
+                    description: 'Compte officiel Symfony pour la veille framework, conferences, securite et ecosysteme PHP.',
+                },
+                {
+                    name: 'Node.js',
+                    link: 'https://x.com/nodejs',
+                    description: 'Informations rapides sur Node.js, releases et sujets d\'architecture backend JavaScript.',
+                },
             ],
         },
     ],
@@ -476,16 +458,17 @@ function TechnologyWatch() {
                                     ))}
                                 </div>
                             )}
-                            <div className="mt-4 flex flex-wrap gap-2">
+                            <div className="mt-4 grid gap-3 sm:grid-cols-2">
                                 {item.sources.map((source) => (
                                     <a
                                         key={`${item.topic}-${source.name}`}
                                         href={source.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="px-3 py-1 text-xs bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-200 transition-colors"
+                                        className="block rounded-lg border border-indigo-100 bg-indigo-50 p-3 hover:bg-indigo-100 transition-colors dark:border-indigo-900 dark:bg-gray-900 dark:hover:bg-gray-700"
                                     >
-                                        {source.name}
+                                        <p className="text-sm font-semibold text-indigo-700 dark:text-indigo-300">{source.name}</p>
+                                        <p className="mt-1 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{source.description}</p>
                                     </a>
                                 ))}
                             </div>
