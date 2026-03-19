@@ -71,17 +71,17 @@ const CV = {
         {date: '2023 - 2026', place: 'Institut Informatique Appliquée Laval', desc: 'BTS SIO option SLAM'}
     ],
     skills: [
-        { name: 'HTML, CSS, Javascript', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
-        { name: 'Node.js', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d\'exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
-        { name: 'Adonis', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
-        { name: 'NuxtJS', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d\'applications front performantes.' },
-        { name: 'React', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d\'interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
-        { name: 'PHP', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
-        { name: 'Symfony', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Framework PHP complet et structuré reposant sur des composants modulaires, idéal pour créer des applications web maintenables et sécurisées.' },
-        { name: 'SQL', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage de gestion de bases de données relationnelles permettant de modéliser, interroger et optimiser les données.' },
-        { name: 'Git', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l\'évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
-        { name: 'C#', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d\'applications .NET, de jeux vidéo et d\'outils multiplateformes.' },
-        { name: 'Unity', status: 'En cours d\'apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d\'outils.' },
+        { name: 'HTML, CSS, Javascript', category: 'Fondamentaux', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Les technologies fondamentales du web permettant de construire des interfaces structurées, stylisées et interactives.' },
+        { name: 'SQL', category: 'Fondamentaux', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage de gestion de bases de données relationnelles permettant de modéliser, interroger et optimiser les données.' },
+        { name: 'Git', category: 'Fondamentaux', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Système de versioning distribué permettant de suivre l\'évolution du code, travailler en équipe et maintenir un historique fiable du projet.' },
+        { name: 'React', category: 'Frontend', status: 'Maîtrisé', stage: 'Optimisation', milestoneType: 'fundamentals', description: 'Bibliothèque JavaScript dédiée à la création d\'interfaces dynamiques et modulaires grâce à un système de composants et de hooks.' },
+        { name: 'NuxtJS', category: 'Frontend', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Vue.js permettant le rendu côté serveur, la génération statique et la création d\'applications front performantes.' },
+        { name: 'Node.js', category: 'Backend', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Environnement d\'exécution JavaScript orienté performance, idéal pour créer des APIs, services backend et outils en temps réel.' },
+        { name: 'Adonis', category: 'Backend', status: 'Maîtrisé', stage: 'Premier projet', milestoneType: 'project', description: 'Framework Node.js full-stack offrant une structure MVC solide, une gestion intégrée des bases de données et un codebase typé et organisé.' },
+        { name: 'PHP', category: 'Backend', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'fundamentals', description: 'Langage backend polyvalent utilisé pour développer des services web, des APIs et des applications serveur robustes.' },
+        { name: 'Symfony', category: 'Backend', status: 'Maîtrisé', stage: 'Expertise', milestoneType: 'project', description: 'Framework PHP complet et structuré reposant sur des composants modulaires, idéal pour créer des applications web maintenables et sécurisées.' },
+        { name: 'C#', category: 'Mobile & App', status: 'Maîtrisé', stage: 'Projets livrés', milestoneType: 'project', description: 'Langage orienté objet moderne utilisé pour le développement d\'applications .NET, de jeux vidéo et d\'outils multiplateformes.' },
+        { name: 'Unity', category: 'Mobile & App', status: 'En cours d\'apprentissage', stage: 'Premier projet', milestoneType: 'project', description: 'Moteur de jeu complet conçu pour créer des expériences 2D/3D interactives, avec un workflow basé sur C# et une large bibliothèque d\'outils.' },
     ],
     technologyWatch: [
         {
@@ -186,6 +186,15 @@ const SKILL_MILESTONES = {
 
 const DEFAULT_MILESTONE_TRACK = 'project'
 
+const SKILL_CATEGORY_ORDER = ['Fondamentaux', 'Frontend', 'Backend', 'Mobile & App']
+
+const SKILL_CATEGORY_STYLES = {
+    'Fondamentaux': 'from-sky-50 to-cyan-50 border-cyan-200',
+    Frontend: 'from-rose-50 to-amber-50 border-rose-200',
+    Backend: 'from-emerald-50 to-lime-50 border-emerald-200',
+    'Mobile & App': 'from-orange-50 to-red-50 border-orange-200',
+}
+
 // ------------------------------------------------------
 // ✅ HEADER avec scroll spy + animation fluide
 // ------------------------------------------------------
@@ -263,23 +272,39 @@ function Hero() {
     const age = calculateAge(CV.dateDeNaissance)
 
     return (
-        <section className="min-h-screen flex items-center" id="home">
-            <div className="max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-8 items-center">
+        <section className="min-h-screen flex items-center relative overflow-hidden" id="home">
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_right,_rgba(14,116,144,0.12),transparent_40%),radial-gradient(circle_at_bottom_left,_rgba(190,24,93,0.12),transparent_35%)]" />
+            <div className="max-w-5xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-10 items-center">
                 <div data-aos="fade-right">
+                    <p className="inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-cyan-50 px-3 py-1 text-xs font-semibold tracking-wide text-cyan-700">Portfolio BTS SIO SLAM</p>
                     <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">{CV.name}</h1>
-                    <p className="mt-3 text-indigo-600 font-medium">{CV.title} — {age} ans</p>
-                    <p className="mt-6 text-gray-700 dark:text-gray-300">{CV.profile}</p>
+                    <p className="mt-3 text-cyan-700 font-semibold">{CV.title} - {age} ans</p>
+                    <p className="mt-6 text-gray-700 dark:text-gray-300 leading-relaxed">{CV.profile}</p>
                     <div className="mt-6 flex gap-3">
-                        <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:bg-indigo-700 transition-colors">Me contacter</a>
-                        <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border rounded-md hover:border-indigo-500 hover:bg-indigo-50 transition-colors">Voir mes compétences</a>
+                        <a href="mailto:guerinremi.pro@gmail.com" className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-700 text-white rounded-md shadow hover:bg-cyan-800 transition-colors">Me contacter</a>
+                        <a href="#competences" className="inline-flex items-center gap-2 px-4 py-2 border border-cyan-200 rounded-md hover:border-cyan-400 hover:bg-cyan-50 transition-colors">Voir mes competences</a>
                     </div>
                 </div>
-                <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-indigo-50 to-white rounded-lg shadow-lg dark:from-gray-800 dark:to-gray-900">
-                    <div className="bg-white/60 dark:bg-gray-800/60 p-4 rounded">
-                        <p className="text-sm text-gray-500">Compétences clés</p>
+                <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-white to-cyan-50 rounded-2xl shadow-xl border border-cyan-100 dark:from-gray-800 dark:to-gray-900">
+                    <div className="grid grid-cols-3 gap-3 mb-4">
+                        <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
+                            <p className="text-xl font-bold text-cyan-700">3+</p>
+                            <p className="text-xs text-gray-500">Experiences</p>
+                        </div>
+                        <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
+                            <p className="text-xl font-bold text-rose-700">10+</p>
+                            <p className="text-xs text-gray-500">Technos</p>
+                        </div>
+                        <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
+                            <p className="text-xl font-bold text-emerald-700">2023-2026</p>
+                            <p className="text-xs text-gray-500">Formation</p>
+                        </div>
+                    </div>
+                    <div className="bg-white/70 dark:bg-gray-800/60 p-4 rounded-xl">
+                        <p className="text-sm text-gray-500">Competences cles</p>
                         <div className="mt-3 flex flex-wrap gap-2">
-                            {CV.skills.map(skill => (
-                                <span key={skill.name} className="px-3 py-1 text-sm border rounded-full border-gray-200 dark:border-gray-600">{skill.name}</span>
+                            {CV.skills.slice(0, 8).map(skill => (
+                                <span key={skill.name} className="px-3 py-1 text-xs border rounded-full border-gray-200 bg-white dark:border-gray-600 dark:bg-gray-900">{skill.name}</span>
                             ))}
                         </div>
                     </div>
@@ -291,55 +316,74 @@ function Hero() {
 
 // ------------------------------------------------------
 function Skills() {
+    const groupedSkills = SKILL_CATEGORY_ORDER.map((category) => ({
+        category,
+        skills: CV.skills.filter((skill) => skill.category === category),
+    }))
+
     return (
         <section className="min-h-screen flex flex-col justify-center bg-gray-50 dark:bg-transparent" id="competences">
             <div className="max-w-5xl mx-auto px-6 py-24 w-full">
                 <h2 data-aos="fade-up" className="text-3xl font-bold">Compétences</h2>
-                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600">Langages et frameworks avec lesquels j'ai déjà travaillé.</p>
-                <div className="mt-8 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                    {CV.skills.map((skill, idx) => (
-                        <div
-                            key={skill.name}
-                            data-aos="zoom-in"
-                            data-aos-delay={idx * 50}
-                            className="relative group p-4 border rounded-lg bg-white transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:border-indigo-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:border-indigo-500"
+                <p data-aos="fade-up" data-aos-delay="100" className="mt-3 text-gray-600 dark:text-gray-300">Compétences développées et mises en pratique au fil de mes projets.</p>
+
+                <div className="mt-6 flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="120">
+                    <span className="px-3 py-1 text-xs rounded-full bg-emerald-100 text-emerald-700">Niveau maitrise visible</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-cyan-100 text-cyan-700">Ordre pedagogique</span>
+                    <span className="px-3 py-1 text-xs rounded-full bg-amber-100 text-amber-700">Parcours progressif</span>
+                </div>
+
+                <div className="mt-8 grid gap-5 lg:grid-cols-2 items-start">
+                    {groupedSkills.map((group, groupIndex) => (
+                        <article
+                            key={group.category}
+                            data-aos={groupIndex % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
+                            data-aos-delay={groupIndex * 140}
+                            className={`h-min rounded-2xl border bg-gradient-to-br p-5 shadow-sm ${groupIndex % 2 === 1 ? 'lg:mt-10' : 'lg:mt-0'} ${SKILL_CATEGORY_STYLES[group.category] || 'from-gray-50 to-white border-gray-200'} dark:from-gray-800 dark:to-gray-900 dark:border-gray-700`}
                         >
-                            <div className="flex justify-between items-center gap-3">
-                                <p className="font-semibold">{skill.name}</p>
-                                <span className={`text-xs font-medium px-2 py-1 rounded-full ${SKILL_STATUS_STYLES[skill.status] || 'text-gray-700 bg-gray-100'}`}>
-                                    {skill.status}
-                                </span>
+                            <div className="mb-4 flex items-center justify-between">
+                                <h3 className="text-xl font-bold">{group.category}</h3>
+                                <span className="text-xs font-medium px-2 py-1 rounded-full bg-white/80 text-gray-700 dark:bg-gray-700 dark:text-gray-100">{group.skills.length} technos</span>
                             </div>
-                            <div className="mt-4 space-y-1">
-                                <p className="text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide">Jalons</p>
-                                <div className="flex flex-wrap gap-1">
-                                    {(SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]).map((milestone, milestoneIndex) => {
-                                        const currentTrack = SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]
-                                        const currentStageIndex = currentTrack.indexOf(skill.stage)
-                                        const reached = currentStageIndex >= milestoneIndex && currentStageIndex !== -1
-                                        return (
-                                            <span
-                                                key={`${skill.name}-${milestone}`}
-                                                className={`px-2 py-0.5 text-[10px] font-medium cursor-default rounded-full border ${
-                                                    reached
-                                                        ? 'bg-indigo-600 text-white border-indigo-600'
-                                                        : 'text-gray-400 border-gray-200 dark:text-gray-500 dark:border-gray-700'
-                                                }`}
-                                            >
-                                                {milestone}
-                                            </span>
-                                        )
-                                    })}
-                                </div>
+
+                            <div className="space-y-3">
+                                {group.skills.map((skill) => {
+                                    const currentTrack = SKILL_MILESTONES[skill.milestoneType] || SKILL_MILESTONES[DEFAULT_MILESTONE_TRACK]
+                                    const currentStageIndex = currentTrack.indexOf(skill.stage)
+
+                                    return (
+                                        <div key={skill.name} className="rounded-xl border border-white/80 bg-white/80 p-4 dark:bg-gray-900 dark:border-gray-700">
+                                            <div className="flex flex-wrap items-center justify-between gap-2">
+                                                <p className="font-semibold text-gray-900 dark:text-gray-100">{skill.name}</p>
+                                                <span className={`text-xs font-medium px-2 py-1 rounded-full ${SKILL_STATUS_STYLES[skill.status] || 'text-gray-700 bg-gray-100'}`}>
+                                                    {skill.status}
+                                                </span>
+                                            </div>
+
+                                            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{skill.description}</p>
+
+                                            <div className="mt-3 flex flex-wrap gap-1.5">
+                                                {currentTrack.map((milestone, milestoneIndex) => {
+                                                    const reached = currentStageIndex >= milestoneIndex && currentStageIndex !== -1
+                                                    return (
+                                                        <span
+                                                            key={`${skill.name}-${milestone}`}
+                                                            className={`px-2 py-0.5 text-[10px] font-medium rounded-full border ${
+                                                                reached
+                                                                    ? 'bg-cyan-700 text-white border-cyan-700'
+                                                                    : 'text-gray-400 border-gray-200 dark:text-gray-500 dark:border-gray-700'
+                                                            }`}
+                                                        >
+                                                            {milestone}
+                                                        </span>
+                                                    )
+                                                })}
+                                            </div>
+                                        </div>
+                                    )
+                                })}
                             </div>
-                            {skill.description && (
-                                <div className="pointer-events-none absolute inset-x-0 bottom-4 translate-y-full opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200">
-                                    <div className="relative mx-auto max-w-xs rounded-lg border border-indigo-100 bg-white dark:bg-gray-900 dark:border-gray-700 p-3 text-xs text-gray-600 dark:text-gray-300 shadow-lg">
-                                        <p className="mt-1 leading-relaxed">{skill.description}</p>
-                                    </div>
-                                </div>
-                            )}
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
@@ -424,6 +468,12 @@ function Experiences() {
 
 // ------------------------------------------------------
 function TechnologyWatch() {
+    const topicStyle = {
+        YouTube: 'border-rose-200 bg-rose-50',
+        Feedly: 'border-emerald-200 bg-emerald-50',
+        'Twitter / X': 'border-sky-200 bg-sky-50',
+    }
+
     return (
         <section className="min-h-screen flex flex-col justify-center bg-gray-50 dark:bg-transparent" id="veille-technologique">
             <div className="max-w-5xl mx-auto px-6 py-24 w-full">
@@ -437,7 +487,7 @@ function TechnologyWatch() {
                             key={item.topic}
                             data-aos="fade-up"
                             data-aos-delay={idx * 100}
-                            className="p-5 border rounded-lg bg-white shadow-sm dark:bg-gray-800 dark:border-gray-700 md:col-span-3"
+                            className={`p-5 border rounded-2xl shadow-sm dark:bg-gray-800 dark:border-gray-700 md:col-span-3 ${topicStyle[item.topic] || 'bg-white border-gray-200'}`}
                         >
                             <h3 className="font-semibold text-lg">{item.topic}</h3>
                             <p className="mt-3 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{item.summary}</p>
@@ -465,9 +515,9 @@ function TechnologyWatch() {
                                         href={source.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block rounded-lg border border-indigo-100 bg-indigo-50 p-3 hover:bg-indigo-100 transition-colors dark:border-indigo-900 dark:bg-gray-900 dark:hover:bg-gray-700"
+                                        className="block rounded-lg border border-white/80 bg-white/80 p-3 hover:bg-white transition-colors dark:border-gray-700 dark:bg-gray-900 dark:hover:bg-gray-700"
                                     >
-                                        <p className="text-sm font-semibold text-indigo-700 dark:text-indigo-300">{source.name}</p>
+                                        <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">{source.name}</p>
                                         <p className="mt-1 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">{source.description}</p>
                                     </a>
                                 ))}
