@@ -275,6 +275,8 @@ function Hero() {
     }
 
     const age = calculateAge(CV.dateDeNaissance)
+    const experienceCount = CV.experiences.length
+    const skillCount = CV.skills.length
 
     return (
         <section className="min-h-screen flex items-center relative overflow-hidden" id="home">
@@ -293,11 +295,11 @@ function Hero() {
                 <div data-aos="fade-left" className="p-6 bg-gradient-to-br from-white to-cyan-50 rounded-2xl shadow-xl border border-cyan-100 dark:from-gray-800 dark:to-gray-900">
                     <div className="grid grid-cols-3 gap-3 mb-4">
                         <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
-                            <p className="text-xl font-bold text-cyan-700">3+</p>
+                            <p className="text-xl font-bold text-cyan-700">{experienceCount}</p>
                             <p className="text-xs text-gray-500">Experiences</p>
                         </div>
                         <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
-                            <p className="text-xl font-bold text-rose-700">10+</p>
+                            <p className="text-xl font-bold text-rose-700">{skillCount}</p>
                             <p className="text-xs text-gray-500">Technos</p>
                         </div>
                         <div className="rounded-lg bg-white p-3 border border-gray-100 text-center dark:bg-gray-900 dark:border-gray-700">
