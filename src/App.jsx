@@ -114,6 +114,11 @@ const CV = {
                     link: 'https://www.youtube.com/@cocadmin',
                     description: 'Contenus orientes admin systeme, infrastructure, outils dev et automatisation utiles en environnement pro.',
                 },
+                {
+                    name: 'V2F',
+                    link: 'https://www.youtube.com/@V2F',
+                    description: 'Contenus sur le developpement web et les pratiques modernes.',
+                },
             ],
         },
         {
@@ -186,7 +191,7 @@ const SKILL_MILESTONES = {
 
 const DEFAULT_MILESTONE_TRACK = 'project'
 
-const SKILL_CATEGORY_ORDER = ['Fondamentaux', 'Frontend', 'Backend', 'Mobile & App']
+const SKILL_CATEGORY_ORDER = ['Fondamentaux', 'Frontend', 'Mobile & App', 'Backend']
 
 const SKILL_CATEGORY_STYLES = {
     'Fondamentaux': 'from-sky-50 to-cyan-50 border-cyan-200',
@@ -333,13 +338,13 @@ function Skills() {
                     <span className="px-3 py-1 text-xs rounded-full bg-amber-100 text-amber-700">Parcours progressif</span>
                 </div>
 
-                <div className="mt-8 grid gap-5 lg:grid-cols-2 items-start">
+                <div className="mt-8 grid gap-5 md:grid-cols-2 items-start">
                     {groupedSkills.map((group, groupIndex) => (
                         <article
                             key={group.category}
                             data-aos={groupIndex % 2 === 0 ? 'fade-up-right' : 'fade-up-left'}
                             data-aos-delay={groupIndex * 140}
-                            className={`h-min rounded-2xl border bg-gradient-to-br p-5 shadow-sm ${groupIndex % 2 === 1 ? 'lg:mt-10' : 'lg:mt-0'} ${SKILL_CATEGORY_STYLES[group.category] || 'from-gray-50 to-white border-gray-200'} dark:from-gray-800 dark:to-gray-900 dark:border-gray-700`}
+                            className={`rounded-2xl border bg-gradient-to-br p-5 shadow-sm ${SKILL_CATEGORY_STYLES[group.category] || 'from-gray-50 to-white border-gray-200'} dark:from-gray-800 dark:to-gray-900 dark:border-gray-700`}
                         >
                             <div className="mb-4 flex items-center justify-between">
                                 <h3 className="text-xl font-bold">{group.category}</h3>
